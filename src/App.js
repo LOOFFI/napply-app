@@ -99,7 +99,16 @@ class App extends Component {
           <Route path="/options" component={Options} />
           <Route path="/payment" component={Payment} />
           <Route path="/validate" component={ValidateBooking} />
-          <Route exact path="/my-account/:userId" component={MyAccount} />} />
+          <Route
+            exact
+            path="/my-account/:userId"
+            render={({ match }) => (
+              <MyAccount
+                editAccount={userDoc => this.updateUser(userDoc)}
+                match={match}
+              />
+            )}
+          />
           <Route component={NotFound} />
         </Switch>
 
