@@ -97,7 +97,7 @@ class App extends Component {
 
           <Route path="/location" component={Location} />
 
-          <Route path="/date" component={DateAndTime} />
+          <Route path="/booking-date" component={DateAndTime} />
 
           <Route path="/options" component={Options} />
 
@@ -112,7 +112,7 @@ class App extends Component {
 
           <Route component={NotFound} />
         </Switch>
-
+        
         <Footer />
       </main>
     );
