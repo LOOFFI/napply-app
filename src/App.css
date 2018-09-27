@@ -90,3 +90,14 @@ form {
   background-color: #131c25;
   border-color: #131c25;
 }
+
+/* >>>>>>>>>> BOOKING <<<<<<<<<<< */
+
+.booking-date {
+  display: inline-flex;
+  margin: 50px 200px;
+}
+
+.day-picker {
+  margin-right: 100px;
+}
