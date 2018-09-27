@@ -9,6 +9,12 @@ import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import Location from "./components/Location";
+import DateAndTime from "./components/DateAndTime";
+import Options from "./components/Options";
+import Payment from "./components/Payment";
+import ValidateBooking from "./components/ValidateBooking";
+import MyAccount from "./components/MyAccount";
 
 class App extends Component {
   constructor(props) {
@@ -88,6 +94,18 @@ class App extends Component {
               />
             )}
           />
+
+          <Route path="/location" component={Location} />
+
+          <Route path="/date" component={DateAndTime} />
+
+          <Route path="/options" component={Options} />
+
+          <Route path="/payment" component={Payment} />
+
+          <Route path="/validate" component={ValidateBooking} />
+
+          <Route path="/my-account" component={MyAccount} />
 
           <Route component={NotFound} />
         </Switch>
