@@ -45,6 +45,12 @@ body {
   border-color: white;
 }
 
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: white;
+  border-color: white;
+  color: #99a7c4;
+}
+
 .btn-outline-primary a:hover {
   color: #99a7c4;
 }
@@ -85,6 +91,10 @@ body {
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
 }
 
 .form-control {
@@ -159,4 +169,8 @@ body {
 
 .day-picker {
   margin-right: 100px;
+}
+
+.table-drag-select td.cell-being-selected {
+  background-color: #99a7c4;
 }
