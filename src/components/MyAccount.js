@@ -48,7 +48,15 @@ class MyAccount extends React.Component {
       <section>
         <h2>Your account</h2>
 
-        <h3>{fullName}</h3>
+        <h3>Your name: {fullName}</h3>
+        <p>Your email: {email}</p>
+        <p>Your password: {originalPassword}</p>
+        <p>Your company: {company}</p>
+        <p>Your birthday: {birthday}</p>
+        <p>
+          Your Phone number: +33
+          {phoneNumber}
+        </p>
       </section>
     );
   }
