@@ -85,71 +85,78 @@ class SignUp extends React.Component {
     }
 
     return (
-      <section>
+      <section className="signup-form">
         <h2>Sign Up</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
-          <label>
-            Full Name:
-            <input
-              value={fullName}
-              type="text"
-              placeholder="Your name"
-              onChange={event => this.updateName(event)}
-            />
-          </label>
+          <div className="form-group">
+            <label for="fullName">
+              Full Name:
+              <input
+                value={fullName}
+                type="text"
+                className="form-control"
+                placeholder="Your Name"
+                onChange={event => this.updateName(event)}
+              />
+            </label>
 
-          <label>
-            Email:
-            <input
-              value={email}
-              type="email"
-              placeholder="myemail@gmail.com"
-              onChange={event => this.updateEmail(event)}
-            />
-          </label>
+            <label for="email">
+              Email:
+              <input
+                value={email}
+                type="email"
+                className="form-control"
+                placeholder="myemail@mail.com"
+                onChange={event => this.updateEmail(event)}
+              />
+            </label>
 
-          <label>
-            Password:
-            <input
-              value={originalPassword}
-              type="password"
-              placeholder="Your password"
-              onChange={event => this.updatePass(event)}
-            />
-          </label>
+            <label for="password">
+              Password:
+              <input
+                value={originalPassword}
+                type="password"
+                className="form-control"
+                placeholder="Your Password"
+                onChange={event => this.updatePass(event)}
+              />
+            </label>
 
-          <label>
-            Company:
-            <input
-              value={company}
-              type="text"
-              placeholder="Your company name"
-              onChange={event => this.updateCompany(event)}
-            />
-          </label>
+            <label for="company">
+              Company:
+              <input
+                value={company}
+                type="text"
+                className="form-control"
+                placeholder="Your Company Name"
+                onChange={event => this.updateCompany(event)}
+              />
+            </label>
 
-          <label>
-            Birthday:
-            <input
-              value={birthday}
-              type="date"
-              placeholder="Your birth date"
-              onChange={event => this.updateBirthday(event)}
-            />
-          </label>
+            <label for="birthday">
+              Birthday:
+              <input
+                value={birthday}
+                type="date"
+                className="form-control"
+                placeholder="Your birth date"
+                onChange={event => this.updateBirthday(event)}
+              />
+            </label>
 
-          <label>
-            Phone number:
-            <input
-              value={phoneNumber}
-              type="number"
-              placeholder="Your phone number"
-              onChange={event => this.updatePhone(event)}
-            />
-          </label>
-
-          <button>Sign Up</button>
+            <label for="number">
+              Phone number:
+              <input
+                value={phoneNumber}
+                type="number"
+                className="form-control"
+                placeholder="Your phone number"
+                onChange={event => this.updatePhone(event)}
+              />
+            </label>
+          </div>
+          <button className="btn btn-outline-primary btn-sign">Sign Up</button>
         </form>
       </section>
     );
