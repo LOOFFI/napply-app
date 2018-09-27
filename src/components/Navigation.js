@@ -1,10 +1,20 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-function Navigation() {
+function Navigation(props) {
+  const { currentUser } = props;
   return (
-    <section>
-      <h2>Navigation</h2>
-    </section>
+    <nav>
+      <NavLink exact to="/">
+        Home
+      </NavLink>
+      {!currentUser && (
+        <span>
+          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink to="/login">Log In</NavLink>
+        </span>
+      )}
+    </nav>
   );
 }
 
