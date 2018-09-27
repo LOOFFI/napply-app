@@ -8,6 +8,11 @@ function Navigation(props) {
       <NavLink exact to="/">
         Home
       </NavLink>
+      {currentUser && (
+        <NavLink exact to="/my-account">
+          My account
+        </NavLink>
+      )}
       {!currentUser && (
         <span>
           <NavLink to="/signup">Sign Up</NavLink>
