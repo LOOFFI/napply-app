@@ -169,7 +169,7 @@ class SignUp extends React.Component {
         <section>
           <h2>You are signed up!</h2>
           <p>
-            Welcome, {currentUser.fullName}. Your user ID is{" "}
+            Welcome, {currentUser.fullName}. Your user ID is
             <b>{currentUser._id}</b>.
           </p>
         </section>

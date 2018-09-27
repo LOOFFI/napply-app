@@ -64,7 +64,7 @@ class App extends Component {
 
           {currentUser && (
             <span>
-              <b>{currentUser.email}</b>
+              <b>{currentUser.fullName}</b>
               <button onClick={() => this.logoutClick()}>Log Out</button>
             </span>
           )}
@@ -94,19 +94,12 @@ class App extends Component {
               />
             )}
           />
-
           <Route path="/location" component={Location} />
-
-          <Route path="/date" component={DateAndTime} />
-
+          <Route path="/booking-date" component={DateAndTime} />
           <Route path="/options" component={Options} />
-
           <Route path="/payment" component={Payment} />
-
           <Route path="/validate" component={ValidateBooking} />
-
-          <Route path="/my-account" component={MyAccount} />
-
+          <Route exact path="/my-account/:userId" component={MyAccount} />} />
           <Route component={NotFound} />
         </Switch>
 
