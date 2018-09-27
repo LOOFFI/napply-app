@@ -1,6 +1,8 @@
 import React from "react";
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import BookingTable from "./BookingTable";
+import "../App.css";
 
 class DateAndTime extends React.Component {
 
@@ -21,17 +23,17 @@ class DateAndTime extends React.Component {
 
     return (
       <section>
-        <h2>Choose your date</h2>
-        <DayPicker 
-         selectedDays={this.state.selectedDay}
-         onDayClick={this.handleDayClick}
-       />
-       <p>
-          {this.state.selectedDay
-            ? this.state.selectedDay.toLocaleDateString()
-            : 'Please select a day 👻'}
-        </p>
-      
+        <h2 align="center">Choose your date</h2>
+      <div  className="booking-date">
+        <div className="day-picker">  
+          <DayPicker 
+            selectedDays={this.state.selectedDay}
+            onDayClick={this.handleDayClick}
+          />
+        </div>
+         <BookingTable/>
+      </div>
+       
       </section>
     );
 

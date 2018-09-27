@@ -6,8 +6,8 @@ function Navigation(props) {
 
   return (
     <nav className="header navbar">
-      <NavLink exact to="/">
-        Home
+      <NavLink exact to="/" className="logo-h2">
+        Napply
       </NavLink>
       {currentUser && (
         <NavLink exact to={`/my-account/${currentUser._id}`}>
