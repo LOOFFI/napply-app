@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <section>
-      <h2>Header</h2>
+      <h2>Napply</h2>
     </section>
   );
 }
