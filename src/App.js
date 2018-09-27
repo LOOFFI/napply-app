@@ -94,22 +94,12 @@ class App extends Component {
               />
             )}
           />
-
           <Route path="/location" component={Location} />
-
           <Route path="/date" component={DateAndTime} />
-
           <Route path="/options" component={Options} />
-
           <Route path="/payment" component={Payment} />
-
           <Route path="/validate" component={ValidateBooking} />
-
-          <Route
-            path="/my-account"
-            render={() => <MyAccount currentUser={currentUser} />}
-          />
-
+          <Route exact path="/my-account/:userId" component={MyAccount} />} />
           <Route component={NotFound} />
         </Switch>
 

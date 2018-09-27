@@ -3,16 +3,18 @@ import { NavLink } from "react-router-dom";
 
 function Navigation(props) {
   const { currentUser } = props;
+
   return (
     <nav className="header navbar">
       <NavLink exact to="/">
         Home
       </NavLink>
       {currentUser && (
-        <NavLink exact to="/my-account">
+        <NavLink exact to={`/my-account/${currentUser._id}`}>
           My account
         </NavLink>
       )}
+
       {!currentUser && (
         <span>
           <NavLink to="/login">Log In</NavLink>
