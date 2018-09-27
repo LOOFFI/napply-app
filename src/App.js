@@ -64,7 +64,7 @@ class App extends Component {
 
           {currentUser && (
             <span>
-              <b>{currentUser.email}</b>
+              <b>{currentUser.fullName}</b>
               <button onClick={() => this.logoutClick()}>Log Out</button>
             </span>
           )}
@@ -105,7 +105,10 @@ class App extends Component {
 
           <Route path="/validate" component={ValidateBooking} />
 
-          <Route path="/my-account" component={MyAccount} />
+          <Route
+            path="/my-account"
+            render={() => <MyAccount currentUser={currentUser} />}
+          />
 
           <Route component={NotFound} />
         </Switch>
