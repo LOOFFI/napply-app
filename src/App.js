@@ -95,7 +95,7 @@ class App extends Component {
             )}
           />
           <Route path="/location" component={Location} />
-          <Route path="/date" component={DateAndTime} />
+          <Route path="/booking-date" component={DateAndTime} />
           <Route path="/options" component={Options} />
           <Route path="/payment" component={Payment} />
           <Route path="/validate" component={ValidateBooking} />
