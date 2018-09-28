@@ -13,17 +13,14 @@ class Location extends React.Component {
       <section>
         <h2>Choose your location</h2>
         <form>
-          <label>
-            Truck 1<input type="radio" />
-          </label>
+          <label>Truck 1</label>
+          <input type="radio" />
 
-          <label>
-            Truck 2<input type="radio" />
-          </label>
+          <label>Truck 2</label>
+          <input type="radio" />
 
-          <label>
-            Truck 3<input type="radio" />
-          </label>
+          <label>Truck 3</label>
+          <input type="radio" />
 
           <button>
             <Link to="/booking-date"> Next step</Link>
