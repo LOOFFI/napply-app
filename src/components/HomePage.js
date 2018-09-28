@@ -10,7 +10,7 @@ function HomePage(props) {
 
       {currentUser && (
         <div>
-          <p>Welcome back {currentUser.fullName}</p>
+          <p>Welcome back, {currentUser.fullName}!</p>
           <button>Book your nap!</button>
           <h3>Your Booking</h3>
           <p>Les bookings en cours</p>
@@ -26,12 +26,12 @@ function HomePage(props) {
         </div>
       )}
 
-      <div>
+      <div className="concept">
         <h4>Le concept</h4>
         <p>Explications</p>
       </div>
 
-      <div>
+      <div className="nap-benefits">
         <h4>Les effets bénéfiques de la sieste sur la santé </h4>
         <p>Ce temps de repos procure :</p>
         <ul>

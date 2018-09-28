@@ -32,7 +32,7 @@ class App extends Component {
       .get("/checklogin")
       .then(response => {
         console.log("Check LOG IN 🤔", response.data);
-        this.updateUser(response.data.userDoc);
+        this.setState({ currentUser: response.data.userDoc });
       })
       .catch(err => {
         console.log(err);
@@ -40,15 +40,15 @@ class App extends Component {
       });
   }
 
-  updateUser(userDoc) {
-    this.setState({ currentUser: userDoc });
-  }
+  // updateUser(userDoc) {
+  //   this.setState({ currentUser: userDoc });
+  // }
 
   logoutClick() {
     api
       .delete("/logout")
       .then(() => {
-        this.updateUser(null);
+        this.setState({ currentUser: null });
       })
       .catch(err => {
         console.log(err);
@@ -60,16 +60,19 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <main>
-        <header>
-          <Navigation currentUser={currentUser} />
+        {/* <header> */}
+        <Navigation
+          currentUser={currentUser}
+          logoutClick={() => this.logoutClick()}
+        />
 
-          {currentUser && (
+        {/* {currentUser && (
             <span>
               <b>{currentUser.fullName}</b>
               <button onClick={() => this.logoutClick()}>Log Out</button>
             </span>
           )}
-        </header>
+        </header> */}
 
         <Switch>
           <Route
@@ -82,7 +85,7 @@ class App extends Component {
             render={() => (
               <SignUp
                 currentUser={currentUser}
-                onSignUp={userDoc => this.updateUser(userDoc)}
+                onSignUp={userDoc => this.setState({ currentUser: userDoc })}
               />
             )}
           />
@@ -91,7 +94,7 @@ class App extends Component {
             render={() => (
               <Login
                 currentUser={currentUser}
-                onLogin={userDoc => this.updateUser(userDoc)}
+                onLogin={userDoc => this.setState({ currentUser: userDoc })}
               />
             )}
           />
@@ -105,7 +108,7 @@ class App extends Component {
             path="/my-account/:userId"
             render={({ match }) => (
               <MyAccount
-                editAccount={userDoc => this.updateUser(userDoc)}
+                editAccount={userDoc => this.setState({ currentUser: userDoc })}
                 match={match}
               />
             )}
