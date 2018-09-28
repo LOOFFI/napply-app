@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function HomePage(props) {
   const { currentUser } = props;
@@ -11,7 +11,9 @@ function HomePage(props) {
       {currentUser && (
         <div>
           <p>Welcome back {currentUser.fullName}</p>
-          <button>Book your nap!</button>
+          <button>
+            <Link to="/location">Book your nap!</Link>
+          </button>
           <h3>Your Booking</h3>
           <p>Les bookings en cours</p>
         </div>
