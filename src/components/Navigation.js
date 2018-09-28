@@ -8,7 +8,11 @@ function Navigation(props) {
     <nav className="header">
       <div className="logo-img">
         <NavLink exact to="/">
-          <img src="../../images/napply-test-01.png" className="navbar-brand" />
+          <img
+            src="../../images/napply-test-01.png"
+            alt="napply-logo"
+            className="navbar-brand"
+          />
         </NavLink>
       </div>
       <div className="right-links">

@@ -53,7 +53,7 @@ input:focus {
 }
 
 .form-group input:focus {
-  border-style: none;
+  /* border-style: none; */
 }
 
 .floating-label {
@@ -83,5 +83,3 @@ input:focus {
   background-color: #131c25;
   border-color: #131c25;
 }
-
-/* >>>>>>> LOGIN <<<<<<< */
