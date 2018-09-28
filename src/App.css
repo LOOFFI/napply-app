@@ -13,7 +13,7 @@ body {
   height: 70px;
   background-color: #99a7c4;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 a.active {
@@ -36,7 +36,7 @@ a.active {
   background-color: transparent;
   background-image: none;
   border-color: white;
-  margin-left: 20px;
+  margin: 0px 30px;
   border-radius: 25px;
 }
 
@@ -61,10 +61,6 @@ a.active {
 
 img.navbar-brand {
   margin-left: 30px;
-}
-
-.right-links  {
-  margin-right: 30px;
 }
 
 /* >>>>>>> FOOTER <<<<<<< */
