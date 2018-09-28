@@ -98,7 +98,10 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/location" component={Location} />
+          <Route
+            path="/location"
+            render={() => <Location currentUser={currentUser} />}
+          />
           <Route path="/booking-date/:bookingId" component={DateAndTime} />
           <Route path="/options/:bookingId" component={Options} />
           <Route path="/payment/:bookingId" component={Payment} />
