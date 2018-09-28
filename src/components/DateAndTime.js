@@ -16,13 +16,13 @@ class DateAndTime extends React.Component {
   }
 
   handleDayClick(day, { selected }) {
-    
+
     this.setState({
       selectedDay: selected ? undefined : day,
     });
 
-    console.log("hiiiiiiiiiiiiiiii", day);
-    console.log(new Date());
+    // console.log("hiiiiiiiiiiiiiiii", day);
+    // console.log(new Date());
     // api.post("/booking-date", day)
     //  .then(reponse => {
     //    console.log("day",day)
@@ -34,11 +34,11 @@ class DateAndTime extends React.Component {
   }
 
   render () {
-    // const {selectedDay} = this.state;
+    
     const past = { 
       before: new Date(),
     };
-    console.log(past.before);
+    
     
     return (
       <section>
@@ -46,7 +46,12 @@ class DateAndTime extends React.Component {
       <div  className="booking-date">
         <div className="day-picker">  
           <DayPicker 
-            modifiers={ past }
+            disabledDays={ past }
+            modifiers={{
+              sunday: day => (day.getDay() === 0 || day.getDay() === 6),
+              
+              firstOfMonth: day => day.getDate() === 1,
+            }}
             selectedDays={this.state.selectedDay}
             onDayClick={(day, info) => this.handleDayClick(day, info)}
            
