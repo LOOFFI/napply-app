@@ -49,8 +49,12 @@ class Navigation extends React.Component {
             )}
             {currentUser && (
               <span>
-                <b>{currentUser.fullName}</b>
-                <button onClick={() => logoutClick()}>Log Out</button>
+                <button
+                  onClick={() => logoutClick()}
+                  className="btn btn-outline-primary"
+                >
+                  Log Out
+                </button>
               </span>
             )}
 

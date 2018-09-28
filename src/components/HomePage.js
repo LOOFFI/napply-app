@@ -6,31 +6,108 @@ function HomePage(props) {
 
   return (
     <section>
-      <h2>Home Page</h2>
+      <div className="welcome-hp">
+        {currentUser && (
+          <div>
+            <div className="hp-btn">
+              <h2>Welcome back, {currentUser.fullName}!</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus aliquet eget est ac sagittis. Integer ultricies mauris
+                eros, ut tempor quam finibus non. Proin sed eleifend leo, non
+                congue sem. Vestibulum vitae ultricies ex. Morbi vehicula
+                tristique nibh eu dignissim. Vestibulum vulputate porta lacinia.
+                Curabitur lobortis finibus leo et consectetur.{" "}
+              </p>
+              <Link to="/location">
+                <button className="btn btn-outline-primary">Book A Nap</button>
+              </Link>
+            </div>
 
-      {currentUser && (
-        <div>
-          <p>Welcome back {currentUser.fullName}</p>
-          <button>
-            <Link to="/location">Book your nap!</Link>
-          </button>
-          <h3>Your Booking</h3>
-          <p>Les bookings en cours</p>
-        </div>
-      )}
+            <h3>Your Booking</h3>
+            <div className="card hp-card">
+              <div className="card-body">
+                <h5 className="card-title">40, rue du Colisée</h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  15 October 2018
+                </h6>
+                {/* <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p> */}
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Sound: <b>Birds & Brook</b>
+                  </li>
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Plaid: <b>Cashmere</b>
+                  </li>
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Energy Shot: <b>Daily</b>
+                  </li>
+                </ul>
+                <a href="#" className="card-link">
+                  Show Details
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
-      {!currentUser && (
-        <div>
-          <p>Welcome to Napply</p>
-          <button>
-            <NavLink to="/signup">Sign up and book your first nap!</NavLink>
-          </button>
-        </div>
-      )}
+        {!currentUser && (
+          <div>
+            <p>Welcome to Napply</p>
+            <button>
+              <NavLink to="/signup">Sign up and book your first nap!</NavLink>
+            </button>
+          </div>
+        )}
+      </div>
 
       <div className="concept">
         <h4>Le concept</h4>
-        <p>Explications</p>
+        <div className="card concept-card">
+          <img
+            className="card-img-top"
+            src="../../images/maps.svg"
+            alt="Card image cap"
+          />
+          <div className="card-body">
+            <p className="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+        <div className="card concept-card">
+          <img
+            className="card-img-top"
+            src="../../images/relaxing.svg"
+            alt="Card image cap"
+          />
+          <div className="card-body">
+            <p className="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+        <div className="card concept-card">
+          <img
+            className="card-img-top"
+            src="../../images/headenergy.svg"
+            alt="Card image cap"
+          />
+          <div className="card-body">
+            <p className="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="nap-benefits">

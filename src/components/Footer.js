@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <section className="footer">
-      <h2>Footer</h2>
+      <h2>Napply</h2>
     </section>
   );
 }

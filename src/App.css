@@ -13,7 +13,6 @@ body {
   height: 70px;
   background-color: #99a7c4;
   color: white;
-  margin-bottom: 40px;
 }
 
 a.active {
@@ -43,6 +42,7 @@ a.active {
 .header .btn-outline-primary:hover {
   background-color: white;
   border-color: white;
+  color: #99a7c4;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active {
@@ -68,7 +68,7 @@ img.navbar-brand {
 .footer {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -81,6 +81,87 @@ img.navbar-brand {
   padding-left: 50px;
   font-size: 1.5em;
   margin: 0;
+}
+
+/* >>>>>>>>>> HOME PAGE <<<<<<<<<<< */
+
+/* welcome section */
+.welcome-hp {
+  padding: 40px;
+}
+
+.welcome-hp h2 {
+  font-size: 22px;
+}
+
+.welcome-hp h3 {
+  font-size: 18px;
+}
+
+.welcome-hp a {
+  text-decoration: none;
+  color: #131c25;
+}
+
+.welcome-hp button {
+  color: #131c25;
+  border-color: #131c25;
+  width: 150px;
+  border-radius: 25px;
+}
+
+.welcome-hp button:hover {
+  color: white;
+  background-color: #131c25;
+  border-color: #131c25;
+}
+
+.hp-btn {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.hp-card {
+  width: 18rem;
+  border-style: none;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item .fa-check {
+  color: #3f506c;
+  margin-right: 10px;
+}
+
+.card-link:hover {
+  color: #99a7c4;
+}
+
+/* concept section */
+.concept {
+  background-color: #fbfbfb;
+  padding: 40px;
+}
+
+.concept {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.card.concept-card {
+  background-color: #fbfbfb;
+  border-style: none;
+}
+
+img.card-img-top {
+  width: 15%;
+  margin: 0 auto;
+}
+
+/* benefits area */
+.nap-benefits {
+  height: 500px;
+  padding: 40px;
 }
 
 /* >>>>>>>>>> BOOKING <<<<<<<<<<< */
