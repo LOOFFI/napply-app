@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import "./App.css";
 import api from "./api";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
@@ -15,6 +14,8 @@ import Options from "./components/Options";
 import Payment from "./components/Payment";
 import ValidateBooking from "./components/ValidateBooking";
 import MyAccount from "./components/MyAccount";
+import "./App.css";
+import "./Auth.css";
 
 class App extends Component {
   constructor(props) {
