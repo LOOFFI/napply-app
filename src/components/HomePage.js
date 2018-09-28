@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function HomePage(props) {
   const { currentUser } = props;
@@ -19,7 +20,9 @@ function HomePage(props) {
       {!currentUser && (
         <div>
           <p>Welcome to Napply</p>
-          <button>Sign Up and book your first nap!</button>
+          <button>
+            <NavLink to="/signup">Sign up and book your first nap!</NavLink>
+          </button>
         </div>
       )}
 
