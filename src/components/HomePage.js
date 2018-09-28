@@ -28,12 +28,12 @@ function HomePage(props) {
         </div>
       )}
 
-      <div>
+      <div className="concept">
         <h4>Le concept</h4>
         <p>Explications</p>
       </div>
 
-      <div>
+      <div className="nap-benefits">
         <h4>Les effets bénéfiques de la sieste sur la santé </h4>
         <p>Ce temps de repos procure :</p>
         <ul>
