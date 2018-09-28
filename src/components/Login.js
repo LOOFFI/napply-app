@@ -9,8 +9,38 @@ class Login extends React.Component {
 
     this.state = {
       email: "",
-      originalPassword: ""
+      originalPassword: "",
+      emailActive: false,
+      passwordActive: false
     };
+  }
+
+  activateEmail() {
+    this.setState({
+      emailActive: true
+    });
+  }
+
+  disableEmail(event) {
+    if (event.target.value === "") {
+      this.setState({
+        emailActive: false
+      });
+    }
+  }
+
+  activatePassword() {
+    this.setState({
+      passwordActive: true
+    });
+  }
+
+  disablePassword(event) {
+    if (event.target.value === "") {
+      this.setState({
+        passwordActive: false
+      });
+    }
   }
 
   updateEmail(event) {
@@ -48,31 +78,45 @@ class Login extends React.Component {
     }
 
     return (
-      <section>
+      <section className="signup-form">
         <h2>Log In</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
-          <label>
-            Email:
-            <input
-              value={email}
-              type="email"
-              placeholder="myemail@gmail.com"
-              onChange={event => this.updateEmail(event)}
-            />
-          </label>
+          <div className="form-group">
+            <div className="form-field">
+              <label className={this.state.emailActive ? "field-active" : ""}>
+                Email
+              </label>
+              <input
+                value={email}
+                type="email"
+                className="floating-label"
+                onChange={event => this.updateEmail(event)}
+                onFocus={() => this.activateEmail()}
+                onBlur={event => this.disableEmail(event)}
+              />
+            </div>
 
-          <label>
-            Password:
-            <input
-              value={originalPassword}
-              type="password"
-              placeholder="Your password"
-              onChange={event => this.updateOriginalPassword(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                className={this.state.passwordActive ? "field-active" : ""}
+              >
+                Password
+              </label>
+              <input
+                value={originalPassword}
+                type="password"
+                className="floating-label"
+                onChange={event => this.updateOriginalPassword(event)}
+                onFocus={() => this.activatePassword()}
+                onBlur={event => this.disablePassword(event)}
+              />
+            </div>
+          </div>
 
-          <button>Log In</button>
+          <div className="btn-signup">
+            <button className="btn btn-outline-primary btn-sign">Log In</button>
+          </div>
         </form>
       </section>
     );

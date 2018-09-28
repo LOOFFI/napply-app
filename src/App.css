@@ -9,10 +9,15 @@ body {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 70px;
   background-color: #99a7c4;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+a.active {
+  width: 80%;
 }
 
 .header h2 {
@@ -20,12 +25,7 @@ body {
   font-size: 1.5em;
 }
 
-.logo-h2 {
-  font-family: "Sacramento", cursive;
-  font-size: 2em;
-}
-
-.navbar a {
+.header a {
   text-decoration: none;
   color: white;
   padding: 15px;
@@ -36,7 +36,7 @@ body {
   background-color: transparent;
   background-image: none;
   border-color: white;
-  margin: 0px 20px;
+  margin: 0px 30px;
   border-radius: 25px;
 }
 
@@ -45,8 +45,22 @@ body {
   border-color: white;
 }
 
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: white;
+  border-color: white;
+  color: #99a7c4;
+}
+
 .btn-outline-primary a:hover {
   color: #99a7c4;
+}
+
+.header img {
+  width: 150px;
+}
+
+img.navbar-brand {
+  margin-left: 30px;
 }
 
 /* >>>>>>> FOOTER <<<<<<< */
@@ -54,7 +68,7 @@ body {
 .footer {
   display: flex;
   align-items: center;
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -69,87 +83,6 @@ body {
   margin: 0;
 }
 
-/* >>>>>>> SIGN UP <<<<<<< */
-.signup-form h2 {
-  text-align: center;
-  font-family: "Sacramento", cursive;
-  margin-bottom: 40px;
-}
-
-.signup-form {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  width: 45%;
-  padding: 30px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-}
-
-.form-control {
-  width: 550px;
-}
-
-.form-field {
-  display: block;
-  position: relative;
-  font-size: 12px;
-  color: #99a7c4;
-  margin-bottom: 30px;
-}
-
-.form-group label {
-  display: inline-block;
-  position: absolute;
-  left: 15px;
-  transition: all 150ms ease-in;
-  color: #99a7c4;
-  z-index: -1;
-}
-
-.form-group input {
-  border-style: none;
-  border-bottom: 1px solid #99a7c4;
-  border-radius: 0;
-  background-color: transparent;
-  margin-bottom: 20px;
-  font-size: 1.2em;
-  padding-left: 15px;
-}
-
-.form-group input:focus {
-  border-style: none;
-}
-
-.floating-label {
-  -webkit-appearance: none !important;
-  width: 550px;
-}
-
-.field-active {
-  transform: translateY(-25px);
-  font-size: 0.9em;
-  color: #131c25;
-}
-
-.btn-signup {
-  text-align: center;
-}
-
-.btn-sign {
-  color: #131c25;
-  border-color: #131c25;
-  width: 150px;
-  border-radius: 25px;
-}
-
-.btn-sign:hover {
-  color: white;
-  background-color: #131c25;
-  border-color: #131c25;
-}
-
 /* >>>>>>>>>> BOOKING <<<<<<<<<<< */
 
 .booking-date {
@@ -161,3 +94,6 @@ body {
   margin-right: 100px;
 }
 
+.table-drag-select td.cell-being-selected {
+  background-color: #99a7c4;
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import "./App.css";
 import api from "./api";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
@@ -15,6 +14,8 @@ import Options from "./components/Options";
 import Payment from "./components/Payment";
 import ValidateBooking from "./components/ValidateBooking";
 import MyAccount from "./components/MyAccount";
+import "./App.css";
+import "./Auth.css";
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends Component {
       .get("/checklogin")
       .then(response => {
         console.log("Check LOG IN 🤔", response.data);
-        this.updateUser(response.data.userDoc);
+        this.setState({ currentUser: response.data.userDoc });
       })
       .catch(err => {
         console.log(err);
@@ -39,15 +40,15 @@ class App extends Component {
       });
   }
 
-  updateUser(userDoc) {
-    this.setState({ currentUser: userDoc });
-  }
+  // updateUser(userDoc) {
+  //   this.setState({ currentUser: userDoc });
+  // }
 
   logoutClick() {
     api
       .delete("/logout")
       .then(() => {
-        this.updateUser(null);
+        this.setState({ currentUser: null });
       })
       .catch(err => {
         console.log(err);
@@ -59,16 +60,19 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <main>
-        <header>
-          <Navigation currentUser={currentUser} />
+        {/* <header> */}
+        <Navigation
+          currentUser={currentUser}
+          logoutClick={() => this.logoutClick()}
+        />
 
-          {currentUser && (
+        {/* {currentUser && (
             <span>
               <b>{currentUser.fullName}</b>
               <button onClick={() => this.logoutClick()}>Log Out</button>
             </span>
           )}
-        </header>
+        </header> */}
 
         <Switch>
           <Route
@@ -81,7 +85,7 @@ class App extends Component {
             render={() => (
               <SignUp
                 currentUser={currentUser}
-                onSignUp={userDoc => this.updateUser(userDoc)}
+                onSignUp={userDoc => this.setState({ currentUser: userDoc })}
               />
             )}
           />
@@ -90,16 +94,25 @@ class App extends Component {
             render={() => (
               <Login
                 currentUser={currentUser}
-                onLogin={userDoc => this.updateUser(userDoc)}
+                onLogin={userDoc => this.setState({ currentUser: userDoc })}
               />
             )}
           />
           <Route path="/location" component={Location} />
-          <Route path="/booking-date" component={DateAndTime} />
-          <Route path="/options" component={Options} />
-          <Route path="/payment" component={Payment} />
-          <Route path="/validate" component={ValidateBooking} />
-          <Route exact path="/my-account/:userId" component={MyAccount} />} />
+          <Route path="/booking-date/:bookingId" component={DateAndTime} />
+          <Route path="/options/:bookingId" component={Options} />
+          <Route path="/payment/:bookingId" component={Payment} />
+          <Route path="/validate/:bookingId" component={ValidateBooking} />
+          <Route
+            exact
+            path="/my-account/:userId"
+            render={({ match }) => (
+              <MyAccount
+                editAccount={userDoc => this.setState({ currentUser: userDoc })}
+                match={match}
+              />
+            )}
+          />
           <Route component={NotFound} />
         </Switch>
 
