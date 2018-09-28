@@ -107,7 +107,7 @@ class Login extends React.Component {
                 value={originalPassword}
                 type="password"
                 className="floating-label"
-                onChange={event => this.updatePassword(event)}
+                onChange={event => this.updateOriginalPassword(event)}
                 onFocus={() => this.activatePassword()}
                 onBlur={event => this.disablePassword(event)}
               />
