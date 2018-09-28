@@ -52,17 +52,6 @@ class Location extends React.Component {
     return (
       <section>
         <h2>Choose your location</h2>
-<<<<<<< HEAD
-        <form>
-          <label>Truck 1</label>
-          <input type="radio" />
-
-          <label>Truck 2</label>
-          <input type="radio" />
-
-          <label>Truck 3</label>
-          <input type="radio" />
-=======
         <form onSubmit={event => this.handleSubmit(event)}>
           <label>
             Truck 1
@@ -96,7 +85,6 @@ class Location extends React.Component {
               checked={this.state.truck_id === "truck3"}
             />
           </label>
->>>>>>> ec7ca7ece9220897ca5b28c1795ee2e1d97cff54
 
           <button>Next step</button>
         </form>
