@@ -8,7 +8,7 @@ class Location extends React.Component {
     super(props);
 
     this.state = {
-      truck_id: "truck1",
+      truck_id: "La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux",
       user_id: "",
       isSubmitSuccess: false,
       bookingId: ""
@@ -72,9 +72,12 @@ class Location extends React.Component {
                   <input
                     type="radio"
                     name="truck_id"
-                    value="truck1"
+                    value="La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux"
                     onChange={event => this.updateTruck(event)}
-                    checked={this.state.truck_id === "truck1"}
+                    checked={
+                      this.state.truck_id ===
+                      "La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux"
+                    }
                   />
                 </label>
               </div>
@@ -98,9 +101,12 @@ class Location extends React.Component {
                   <input
                     type="radio"
                     name="truck_id"
-                    value="truck2"
+                    value="Paris - Montmatre, 34 Rue Des Cloys - 75018 Paris"
                     onChange={event => this.updateTruck(event)}
-                    checked={this.state.truck_id === "truck2"}
+                    checked={
+                      this.state.truck_id ===
+                      "Paris - Montmatre, 34 Rue Des Cloys - 75018 Paris"
+                    }
                   />
                 </label>
               </div>
@@ -124,9 +130,12 @@ class Location extends React.Component {
                   <input
                     type="radio"
                     name="truck_id"
-                    value="truck3"
+                    value="Paris - Rivoli, Allée de Castiglione - 75001 Paris"
                     onChange={event => this.updateTruck(event)}
-                    checked={this.state.truck_id === "truck3"}
+                    checked={
+                      this.state.truck_id ===
+                      "Paris - Rivoli, Allée de Castiglione - 75001 Paris"
+                    }
                   />
                 </label>
               </div>
