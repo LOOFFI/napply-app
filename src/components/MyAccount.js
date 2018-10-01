@@ -2,6 +2,8 @@ import React from "react";
 
 import api from "../api.js";
 
+import { Redirect } from "react-router-dom";
+
 class MyAccount extends React.Component {
   constructor(props) {
     super(props);
@@ -182,6 +184,11 @@ class MyAccount extends React.Component {
     } = this.state;
 
     const myBirthday = birthday.slice(0, 10);
+    const { currentUser } = this.props;
+
+    if (!currentUser) {
+      return <Redirect to="/" />;
+    }
 
     return (
       <section className="signup-form">

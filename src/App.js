@@ -113,6 +113,7 @@ class App extends Component {
               <MyAccount
                 editAccount={userDoc => this.setState({ currentUser: userDoc })}
                 match={match}
+                currentUser={currentUser}
               />
             )}
           />
