@@ -42,6 +42,7 @@ class Navigation extends React.Component {
             </NavLink>
           </div>
           <div className="right-links">
+            {currentUser && <NavLink to="/">Home</NavLink>}
             {currentUser && (
               <NavLink exact to={`/my-account/${currentUser._id}`}>
                 My account

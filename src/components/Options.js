@@ -8,9 +8,9 @@ class Options extends React.Component {
     super(props);
 
     this.state = {
-      sound: "sound1",
-      plaid: "plaid1",
-      energyShot: "juice1",
+      sound: "Birds & Brook",
+      plaid: "Cashmere",
+      energyShot: "Super Green",
       isSubmitSuccess: false
     };
   }
@@ -64,42 +64,42 @@ class Options extends React.Component {
             <div>
               <input
                 type="radio"
-                value="sound1"
+                value="Birds & Brook"
                 name="sounds"
                 onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "sound1"}
+                checked={this.state.sound === "Birds & Brook"}
               />
-              <label for="sound1">Sound 1</label>
+              <label for="Birds & Brook">Birds & Brook</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="sound2"
+                value="See Waves"
                 name="sounds"
                 onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "sound2"}
+                checked={this.state.sound === "See Waves"}
               />
-              <label for="sound2">Sound 2</label>
+              <label for="See Waves">See Waves</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="sound3"
+                value="Tibetan Chakra"
                 name="sounds"
                 onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "sound3"}
+                checked={this.state.sound === "Tibetan Chakra"}
               />
-              <label for="sound3">Sound 3</label>
+              <label for="Tibetan Chakra">Tibetan Chakra</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="none"
+                value="None"
                 name="sounds"
                 onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "none"}
+                checked={this.state.sound === "None"}
               />
-              <label for="sound4">None</label>
+              <label for="None">None</label>
             </div>
           </div>
 
@@ -108,42 +108,33 @@ class Options extends React.Component {
             <div>
               <input
                 type="radio"
-                value="plaid1"
+                value="Cashmere"
                 name="plaids"
                 onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "plaid1"}
+                checked={this.state.plaid === "Cashmere"}
               />
-              <label for="plaid1">Plaid 1</label>
+              <label for="Cashmere">Cashmere</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="plaid2"
+                value="Fleece"
                 name="plaids"
                 onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "plaid2"}
+                checked={this.state.plaid === "Fleece"}
               />
-              <label for="plaid2">Plaid 2</label>
+              <label for="Fleece">Fleece</label>
             </div>
+
             <div>
               <input
                 type="radio"
-                value="plaid3"
+                value="None"
                 name="plaids"
                 onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "plaid3"}
+                checked={this.state.plaid === "None"}
               />
-              <label for="plaid3">PLaid 3</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="none"
-                name="plaids"
-                onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "none"}
-              />
-              <label for="plaid4">None</label>
+              <label for="None">None</label>
             </div>
           </div>
 
@@ -152,42 +143,46 @@ class Options extends React.Component {
             <div>
               <input
                 type="radio"
-                value="juice1"
+                value="Super Green"
                 name="juices"
                 onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "juice1"}
+                checked={this.state.energyShot === "Super Green"}
               />
-              <label for="juice1">Juice 1</label>
+              <label for="Super Green">Super Green : Apple / Kiwi / Mint</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="juice2"
+                value="Veggie Detox"
                 name="juices"
                 onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "juice2"}
+                checked={this.state.energyShot === "Veggie Detox"}
               />
-              <label for="juice2">Juice 2</label>
+              <label for="Veggie Detox">
+                Veggie Detox : Cucumber / Aloe Vera / Mint / Spinach
+              </label>
             </div>
             <div>
               <input
                 type="radio"
-                value="juice3"
+                value="White Paradise"
                 name="juices"
                 onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "juice3"}
+                checked={this.state.energyShot === "White Paradise"}
               />
-              <label for="juice3">Juice 3</label>
+              <label for="White Paradise">
+                White Paradise : Almond Milk / Coconut / Pineapple
+              </label>
             </div>
             <div>
               <input
                 type="radio"
-                value="none"
+                value="None"
                 name="juices"
                 onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "none"}
+                checked={this.state.energyShot === "None"}
               />
-              <label for="juice4">None</label>
+              <label for="None">None</label>
             </div>
           </div>
 
