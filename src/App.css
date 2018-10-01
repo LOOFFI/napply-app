@@ -216,6 +216,7 @@ div.card.concept-card {
 
 .benefits-info h4 {
   margin-bottom: 20px;
+  letter-spacing: 6px;
 }
 
 .benefits-info h5 {
@@ -273,4 +274,8 @@ div.card.concept-card {
 
 .table-drag-select td.cell-being-selected {
   background-color: #99a7c4;
+}
+
+.date-time {
+  text-align: center;
 }

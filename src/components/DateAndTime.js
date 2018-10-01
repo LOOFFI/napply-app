@@ -66,7 +66,7 @@ class DateAndTime extends React.Component {
     }
 
     return (
-      <section>
+      <section className="date-time">
         <h2 align="center">Pick A Date & Time Slot</h2>
         <div className="booking-date">
           <div className="day-picker">
