@@ -50,13 +50,8 @@ class Location extends React.Component {
     }
 
     return (
-<<<<<<< HEAD
-      <section>
-        <h2>Choose your location</h2>
-=======
       <section className="loc-section">
         <h2>Pick A Location</h2>
->>>>>>> 2f3e550b39a92ca2d99483f4092e3b5178c435d9
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="locations">
             <div className="card card-loc">
@@ -85,18 +80,6 @@ class Location extends React.Component {
               </div>
             </div>
 
-<<<<<<< HEAD
-          <label>
-            Truck 3
-            <input
-              type="radio"
-              name="truck_id"
-              value="truck3"
-              onChange={event => this.updateTruck(event)}
-              checked={this.state.truck_id === "truck3"}
-            />
-          </label>
-=======
             <div className="card card-loc">
               <img
                 className="card-img-top img-loc"
@@ -122,7 +105,6 @@ class Location extends React.Component {
                 </label>
               </div>
             </div>
->>>>>>> 2f3e550b39a92ca2d99483f4092e3b5178c435d9
 
             <div className="card card-loc">
               <img
