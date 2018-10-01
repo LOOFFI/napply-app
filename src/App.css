@@ -93,6 +93,7 @@ img.navbar-brand {
 
 .welcome-hp h2 {
   font-size: 22px;
+  letter-spacing: 6px;
 }
 
 .welcome-hp h3 {
@@ -147,10 +148,20 @@ img.navbar-brand {
   background-color: #fbfbfb;
   padding: 40px;
   text-align: center;
+  height: 400px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .concept h4 {
   margin-bottom: 30px;
+  letter-spacing: 6px;
+}
+
+.concept h5 {
+  font-weight: bold;
 }
 
 div.card.concept-card {
@@ -181,6 +192,7 @@ div.card.concept-card {
 .nap-benefits {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .benefits-img img {
@@ -189,7 +201,7 @@ div.card.concept-card {
 }
 
 .benefits-info {
-  line-height: 35px;
+  line-height: 45px;
   color: #3f506c;
   padding: 80px;
 }
@@ -200,6 +212,15 @@ div.card.concept-card {
 
 .benefits-info p {
   margin-bottom: 0px;
+}
+
+.benefits-info h4 {
+  margin-bottom: 20px;
+}
+
+.benefits-info h5 {
+  margin-bottom: 20px;
+  line-height: 30px;
 }
 
 /* >>>>>>>>>> LOCATIONS <<<<<<<<<<< */

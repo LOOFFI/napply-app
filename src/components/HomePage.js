@@ -10,7 +10,9 @@ function HomePage(props) {
         {currentUser && (
           <div>
             <div className="hp-btn">
-              <h2>Welcome back, {currentUser.fullName}!</h2>
+              <h2>
+                Welcome back, <b>{currentUser.fullName}!</b>
+              </h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               <Link to="/location">
                 <button className="btn btn-outline-primary">Book A Nap</button>
@@ -57,7 +59,7 @@ function HomePage(props) {
       </div>
 
       <div className="concept">
-        <h4>The Concept</h4>
+        <h4>Concept</h4>
 
         <div className="concept-cards">
           <div className="card concept-card">
@@ -106,9 +108,9 @@ function HomePage(props) {
         <div className="benefits-info">
           <h4>Napply will help you be at your very best</h4>
           <h5>
-            Napping at work sounds pretty risky, but doing it is so much fun! It
-            gives you the chance to take a little time, get back in the zone and
-            recharge your batteries.
+            Napping at work sounds pretty risky, but it does give you the chance
+            to take a little time, get back in the zone and recharge your
+            batteries.
           </h5>
           <p>Taking some time to nap and rest will bring you:</p>
           <ul>
