@@ -71,7 +71,7 @@ function HomePage(props) {
         <h4>Le concept</h4>
         <div className="card concept-card">
           <img
-            className="card-img-top"
+            className="card-img-top img-concept"
             src="../../images/maps.svg"
             alt="Card image cap"
           />
@@ -84,7 +84,7 @@ function HomePage(props) {
         </div>
         <div className="card concept-card">
           <img
-            className="card-img-top"
+            className="card-img-top img-concept"
             src="../../images/relaxing.svg"
             alt="Card image cap"
           />
@@ -97,7 +97,7 @@ function HomePage(props) {
         </div>
         <div className="card concept-card">
           <img
-            className="card-img-top"
+            className="card-img-top img-concept"
             src="../../images/headenergy.svg"
             alt="Card image cap"
           />
