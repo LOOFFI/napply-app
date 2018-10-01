@@ -2,6 +2,8 @@ import React from "react";
 
 import api from "../api.js";
 
+import { Redirect } from "react-router-dom";
+
 class MyAccount extends React.Component {
   constructor(props) {
     super(props);
@@ -13,8 +15,99 @@ class MyAccount extends React.Component {
       originalPassword: "",
       company: "",
       birthday: "",
-      phoneNumber: ""
+      phoneNumber: "",
+      fullNameActive: true,
+      emailActive: true,
+      passwordActive: true,
+      companyActive: true,
+      birthdayActive: true,
+      numberActive: true
     };
+  }
+
+  activateFullName() {
+    this.setState({
+      fullNameActive: true
+    });
+  }
+
+  // to deactivate input only if it's empty
+  disableFullName(event) {
+    if (event.target.value === "") {
+      this.setState({
+        fullNameActive: false
+      });
+    }
+  }
+
+  activateEmail() {
+    this.setState({
+      emailActive: true
+    });
+  }
+
+  disableEmail(event) {
+    if (event.target.value === "") {
+      this.setState({
+        emailActive: false
+      });
+    }
+  }
+
+  activatePassword() {
+    this.setState({
+      passwordActive: true
+    });
+  }
+
+  disablePassword(event) {
+    if (event.target.value === "") {
+      this.setState({
+        passwordActive: false
+      });
+    }
+  }
+
+  activateCompany() {
+    this.setState({
+      companyActive: true
+    });
+  }
+
+  disableCompany(event) {
+    if (event.target.value === "") {
+      this.setState({
+        companyActive: false
+      });
+    }
+  }
+
+  activateBirthday() {
+    this.setState({
+      birthdayActive: true
+    });
+  }
+
+  disableBirthday(event) {
+    if (event.target.value === "") {
+      this.setState({
+        birthdayActive: false
+      });
+    }
+  }
+
+  activateNumber() {
+    this.setState({
+      numberActive: true
+    });
+  }
+
+  disableNumber(event) {
+    if (event.target.value === "") {
+      this.setState({
+        numberActive: false
+      });
+    }
   }
 
   componentDidMount() {
@@ -91,71 +184,121 @@ class MyAccount extends React.Component {
     } = this.state;
 
     const myBirthday = birthday.slice(0, 10);
+    const { currentUser } = this.props;
+
+    if (!currentUser) {
+      return <Redirect to="/" />;
+    }
 
     return (
-      <section>
+      <section className="signup-form">
         <h2>Your account</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
-          <label for="fullName">
-            Full Name:
-            <input
-              value={fullName}
-              type="text"
-              placeholder="Your Name"
-              onChange={event => this.updateName(event)}
-            />
-          </label>
+          <div className="form-group">
+            <div className="form-field">
+              <label
+                htmlFor="fullName"
+                className={this.state.fullNameActive ? "field-active" : ""}
+              >
+                Full Name
+              </label>
+              <input
+                value={fullName}
+                type="text"
+                className="floating-label"
+                onChange={event => this.updateName(event)}
+                onFocus={() => this.activateFullName()}
+                onBlur={event => this.disableFullName(event)}
+              />
+            </div>
 
-          <label for="email">
-            Email:
-            <input
-              value={email}
-              type="email"
-              placeholder="myemail@mail.com"
-              onChange={event => this.updateEmail(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                htmlFor="email"
+                className={this.state.emailActive ? "field-active" : ""}
+              >
+                Email
+              </label>
+              <input
+                value={email}
+                type="email"
+                className="floating-label"
+                onChange={event => this.updateEmail(event)}
+                onFocus={() => this.activateEmail()}
+                onBlur={event => this.disableEmail(event)}
+              />
+            </div>
 
-          <label for="password">
-            Password:
-            <input
-              value={originalPassword}
-              type="password"
-              placeholder="*******"
-              onChange={event => this.updatePass(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                htmlFor="password"
+                className={this.state.passwordActive ? "field-active" : ""}
+              >
+                Password
+              </label>
+              <input
+                value={originalPassword}
+                type="password"
+                className="floating-label"
+                placeholder="********"
+                onChange={event => this.updateOriginalPassword(event)}
+                onFocus={() => this.activatePassword()}
+                onBlur={event => this.disablePassword(event)}
+              />
+            </div>
 
-          <label for="company">
-            Company:
-            <input
-              value={company}
-              type="text"
-              placeholder="Your Company Name"
-              onChange={event => this.updateCompany(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                htmlFor="company"
+                className={this.state.companyActive ? "field-active" : ""}
+              >
+                Company
+              </label>
+              <input
+                value={company}
+                type="text"
+                className="floating-label"
+                onChange={event => this.updateCompany(event)}
+                onFocus={() => this.activateCompany()}
+                onBlur={event => this.disableCompany(event)}
+              />
+            </div>
 
-          <label for="birthday">
-            Birthday:
-            <input
-              value={myBirthday}
-              type="date"
-              placeholder="Your birth date"
-              onChange={event => this.updateBirthday(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                htmlFor="birthday"
+                className={this.state.birthdayActive ? "field-active" : ""}
+              >
+                Birthday:
+              </label>
+              <input
+                value={myBirthday}
+                type="date"
+                className="floating-label"
+                onChange={event => this.updateBirthday(event)}
+                onFocus={() => this.activateBirthday()}
+                onBlur={event => this.disableBirthday(event)}
+              />
+            </div>
 
-          <label for="number">
-            Phone number:
-            <input
-              value={phoneNumber}
-              type="number"
-              placeholder="Your phone number"
-              onChange={event => this.updatePhone(event)}
-            />
-          </label>
+            <div className="form-field">
+              <label
+                htmlFor="number"
+                className={this.state.numberActive ? "field-active" : ""}
+              >
+                Phone number
+              </label>
+              <input
+                value={phoneNumber}
+                type="number"
+                className="floating-label"
+                onChange={event => this.updatePhone(event)}
+                onFocus={() => this.activateNumber()}
+                onBlur={event => this.disableNumber(event)}
+              />
+            </div>
+          </div>
           <button className="btn btn-outline-primary btn-sign">Save</button>
         </form>
       </section>

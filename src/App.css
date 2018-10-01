@@ -13,6 +13,7 @@ body {
   height: 70px;
   background-color: #99a7c4;
   color: white;
+  margin-bottom: 30px;
 }
 
 a.active {
@@ -92,6 +93,7 @@ img.navbar-brand {
 
 .welcome-hp h2 {
   font-size: 22px;
+  letter-spacing: 6px;
 }
 
 .welcome-hp h3 {
@@ -122,6 +124,10 @@ img.navbar-brand {
   margin: 0 auto;
 }
 
+.hp-btn p {
+  font-size: 18px;
+}
+
 .hp-card {
   width: 18rem;
   border-style: none;
@@ -141,11 +147,21 @@ img.navbar-brand {
 .concept {
   background-color: #fbfbfb;
   padding: 40px;
+  text-align: center;
+  height: 400px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.concept {
-  display: flex;
-  justify-content: space-around;
+.concept h4 {
+  margin-bottom: 30px;
+  letter-spacing: 6px;
+}
+
+.concept h5 {
+  font-weight: bold;
 }
 
 div.card.concept-card {
@@ -153,18 +169,98 @@ div.card.concept-card {
   border-style: none;
 }
 
-img.card-img-top {
-  width: 15%;
-  margin: 0 auto;
+.concept-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.concept-card {
+  width: 350px;
+}
+
+.concept-card .fas {
+  margin-right: 10px;
+  color: #3f506c;
+}
+
+.concept p {
+  font-size: 18px;
+  color: #131c25;
 }
 
 /* benefits area */
 .nap-benefits {
-  height: 500px;
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* >>>>>>>>>> BOOKING <<<<<<<<<<< */
+.benefits-img img {
+  width: 500px;
+  padding: 80px;
+}
+
+.benefits-info {
+  line-height: 45px;
+  color: #3f506c;
+  padding: 80px;
+}
+
+.benefits-info ul {
+  padding-left: 20px;
+}
+
+.benefits-info p {
+  margin-bottom: 0px;
+}
+
+.benefits-info h4 {
+  margin-bottom: 20px;
+}
+
+.benefits-info h5 {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+/* >>>>>>>>>> LOCATIONS <<<<<<<<<<< */
+
+.loc-section {
+  text-align: center;
+}
+
+.loc-section h2 {
+  margin-bottom: 30px;
+}
+
+.locations {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-loc {
+  width: 300px;
+  display: inline-block;
+  margin-bottom: 50px;
+  border-style: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-loc:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.img-loc {
+  height: 170px;
+}
+
+.fa-phone {
+  margin-right: 10px;
+  color: #3f506c;
+}
+
+/* >>>>>>>>>> BOOKING DATE <<<<<<<<<<< */
 
 .booking-date {
   display: inline-flex;

@@ -10,31 +10,22 @@ function HomePage(props) {
         {currentUser && (
           <div>
             <div className="hp-btn">
-              <h2>Welcome back, {currentUser.fullName}!</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus aliquet eget est ac sagittis. Integer ultricies mauris
-                eros, ut tempor quam finibus non. Proin sed eleifend leo, non
-                congue sem. Vestibulum vitae ultricies ex. Morbi vehicula
-                tristique nibh eu dignissim. Vestibulum vulputate porta lacinia.
-                Curabitur lobortis finibus leo et consectetur.{" "}
-              </p>
+              <h2>
+                Welcome back, <b>{currentUser.fullName}!</b>
+              </h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               <Link to="/location">
                 <button className="btn btn-outline-primary">Book A Nap</button>
               </Link>
             </div>
 
-            <h3>Your Booking</h3>
+            <h3>Your Bookings</h3>
             <div className="card hp-card">
               <div className="card-body">
                 <h5 className="card-title">40, rue du Colisée</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   15 October 2018
                 </h6>
-                {/* <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p> */}
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item">
                     <i className="fas fa-check" />
@@ -68,66 +59,80 @@ function HomePage(props) {
       </div>
 
       <div className="concept">
-        <h4>Le concept</h4>
-        <div className="card concept-card">
-          <img
-            className="card-img-top"
-            src="../../images/maps.svg"
-            alt="Card image cap"
-          />
-          <div className="card-body">
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+        <h4>Concept</h4>
+
+        <div className="concept-cards">
+          <div className="card concept-card">
+            <h5>
+              <i className="fas fa-compass" />
+              Pick the most convenient location for you
+            </h5>
+            <div className="card-body">
+              <p className="card-text">
+                We made sure to spread through the capital. Browse through our
+                different locations and find the most convenient one for you.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="card concept-card">
-          <img
-            className="card-img-top"
-            src="../../images/relaxing.svg"
-            alt="Card image cap"
-          />
-          <div className="card-body">
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+          <div className="card concept-card">
+            <h5>
+              <i className="fas fa-bed" />
+              Come on the date, just relax
+            </h5>
+            <div className="card-body">
+              <p className="card-text">
+                Once you've booked your nap (3 minutes tops!), the only thing
+                you've got to do and come on the date, lay down and relax.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="card concept-card">
-          <img
-            className="card-img-top"
-            src="../../images/headenergy.svg"
-            alt="Card image cap"
-          />
-          <div className="card-body">
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+          <div className="card concept-card">
+            <h5>
+              <i className="fas fa-bolt" />
+              You're good to go back to work!
+            </h5>
+            <div className="card-body">
+              <p className="card-text">
+                15 minutes later, you are all ready to go and make the most of
+                your day!
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="nap-benefits">
-        <h4>Les effets bénéfiques de la sieste sur la santé </h4>
-        <p>Ce temps de repos procure :</p>
-        <ul>
-          <li>
-            une amélioration immédiate de la vigilance : attention,
-            concentration, énergie, performance, humeur
-          </li>
-          <li>une très forte protection antistress </li>
-          <li>
-            une bonne régulation en termes de protection cardiovasculaire, avec
-            une incidence sur l’hypertension artérielle (baisse)
-          </li>
-          <li>
-            une meilleure mémorisation, ce qui est vrai aussi bien entendu pour
-            le sommeil de nuit
-          </li>
-        </ul>
+        <div className="benefits-img">
+          <img src="../../images/rest-illustration.jpg" />
+        </div>
+        <div className="benefits-info">
+          <h4>Napply will help you be at your very best</h4>
+          <h5>
+            Napping at work sounds pretty risky, but it does give you the chance
+            to take a little time, get back in the zone and recharge your
+            batteries.
+          </h5>
+          <p>Taking some time to nap and rest will bring you:</p>
+          <ul>
+            <li>
+              Improvement of your productivity: attention, concentration,
+              energy, performance, mood.
+            </li>
+            <li>
+              Help your mental health. You need to be in the right mental state
+              to conduct your job properly, so in order to try and regain a
+              little control, it’s worth turning to the land of nod to get some
+              well-earned rest.
+            </li>
+            <li>
+              An great regulation in terms of cardiovascular protection,
+              reducing the risk and frequency of illness, as well as driving
+              down cortisol levels and inflammation. By taking a nap at least 3
+              times a week workers have been shown to reduce their risk of
+              coronary disease by 50%.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

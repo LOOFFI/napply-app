@@ -103,8 +103,12 @@ class App extends Component {
             path="/location"
             render={() => <Location currentUser={currentUser} />}
           />
-          <Route path="/booking-date/:bookingId" component={DateAndTime} />
-          <Route path="/options/:bookingId" component={Options} />
+          <Route
+            exact
+            path="/booking-date/:bookingId"
+            component={DateAndTime}
+          />
+          <Route exact path="/options/:bookingId" component={Options} />
           <Route path="/payment/:bookingId" component={Payment} />
           <Route path="/validate/:bookingId" component={ValidateBooking} />
           <Route
@@ -114,6 +118,7 @@ class App extends Component {
               <MyAccount
                 editAccount={userDoc => this.setState({ currentUser: userDoc })}
                 match={match}
+                currentUser={currentUser}
               />
             )}
           />
