@@ -58,6 +58,7 @@ class App extends Component {
 
   render() {
     const { currentUser } = this.state;
+
     return (
       <main>
         {/* <header> */}
