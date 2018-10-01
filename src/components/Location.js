@@ -65,6 +65,10 @@ class Location extends React.Component {
                   <h3>La Défense - Parvis</h3>
                   <p>76 Rue de la Demi Lune</p>
                   <p>92800 Puteaux</p>
+                  <p>
+                    <i className="fas fa-phone fa-flip-horizontal" />
+                    01.34.65.88.75
+                  </p>
                   <input
                     type="radio"
                     name="truck_id"
@@ -87,6 +91,10 @@ class Location extends React.Component {
                   <h3>Paris - Montmatre</h3>
                   <p>34 Rue Des Cloys</p>
                   <p>75018 Paris</p>
+                  <p>
+                    <i className="fas fa-phone fa-flip-horizontal" />
+                    01.35.66.21.90
+                  </p>
                   <input
                     type="radio"
                     name="truck_id"
@@ -109,6 +117,10 @@ class Location extends React.Component {
                   <h3>Paris - Rivoli</h3>
                   <p>Allée de Castiglione</p>
                   <p>75001 Paris</p>
+                  <p>
+                    <i className="fas fa-phone fa-flip-horizontal" />
+                    01.53.20.40.46
+                  </p>
                   <input
                     type="radio"
                     name="truck_id"

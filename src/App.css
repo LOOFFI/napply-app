@@ -197,6 +197,11 @@ div.card.concept-card {
   height: 170px;
 }
 
+.fa-phone {
+  margin-right: 10px;
+  color: #3f506c;
+}
+
 /* >>>>>>>>>> BOOKING DATE <<<<<<<<<<< */
 
 .booking-date {
