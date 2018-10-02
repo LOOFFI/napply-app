@@ -69,17 +69,17 @@ class Options extends React.Component {
                 onChange={event => this.updateSound(event)}
                 checked={this.state.sound === "Birds & Brook"}
               />
-              <label for="Birds & Brook">Birds & Brook</label>
+              <label >Birds & Brook</label>
             </div>
             <div>
               <input
                 type="radio"
-                value="See Waves"
+                value="Sea Waves"
                 name="sounds"
                 onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "See Waves"}
+                checked={this.state.sound === "Sea Waves"}
               />
-              <label for="See Waves">See Waves</label>
+              <label >Sea Waves</label>
             </div>
             <div>
               <input
@@ -89,7 +89,7 @@ class Options extends React.Component {
                 onChange={event => this.updateSound(event)}
                 checked={this.state.sound === "Tibetan Chakra"}
               />
-              <label for="Tibetan Chakra">Tibetan Chakra</label>
+              <label >Tibetan Chakra</label>
             </div>
             <div>
               <input
@@ -99,7 +99,7 @@ class Options extends React.Component {
                 onChange={event => this.updateSound(event)}
                 checked={this.state.sound === "None"}
               />
-              <label for="None">None</label>
+              <label >None</label>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ class Options extends React.Component {
                 onChange={event => this.updatePlaid(event)}
                 checked={this.state.plaid === "Cashmere"}
               />
-              <label for="Cashmere">Cashmere</label>
+              <label >Cashmere</label>
             </div>
             <div>
               <input
@@ -123,7 +123,7 @@ class Options extends React.Component {
                 onChange={event => this.updatePlaid(event)}
                 checked={this.state.plaid === "Fleece"}
               />
-              <label for="Fleece">Fleece</label>
+              <label >Fleece</label>
             </div>
 
             <div>
@@ -134,7 +134,7 @@ class Options extends React.Component {
                 onChange={event => this.updatePlaid(event)}
                 checked={this.state.plaid === "None"}
               />
-              <label for="None">None</label>
+              <label >None</label>
             </div>
           </div>
 
@@ -148,7 +148,7 @@ class Options extends React.Component {
                 onChange={event => this.updateEnergyShot(event)}
                 checked={this.state.energyShot === "Super Green"}
               />
-              <label for="Super Green">Super Green : Apple / Kiwi / Mint</label>
+              <label >Super Green : Apple / Kiwi / Mint</label>
             </div>
             <div>
               <input
@@ -158,7 +158,7 @@ class Options extends React.Component {
                 onChange={event => this.updateEnergyShot(event)}
                 checked={this.state.energyShot === "Veggie Detox"}
               />
-              <label for="Veggie Detox">
+              <label >
                 Veggie Detox : Cucumber / Aloe Vera / Mint / Spinach
               </label>
             </div>
@@ -170,7 +170,7 @@ class Options extends React.Component {
                 onChange={event => this.updateEnergyShot(event)}
                 checked={this.state.energyShot === "White Paradise"}
               />
-              <label for="White Paradise">
+              <label >
                 White Paradise : Almond Milk / Coconut / Pineapple
               </label>
             </div>
@@ -182,7 +182,7 @@ class Options extends React.Component {
                 onChange={event => this.updateEnergyShot(event)}
                 checked={this.state.energyShot === "None"}
               />
-              <label for="None">None</label>
+              <label >None</label>
             </div>
           </div>
 

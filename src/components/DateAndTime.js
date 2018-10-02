@@ -26,7 +26,9 @@ class DateAndTime extends React.Component {
         api
           .post("/booking-date", this.state)
           .then(response => {
-            console.log(response);
+            console.log(response.data);
+            
+                        
           })
           .catch(err => {
             console.log(err);
@@ -41,6 +43,8 @@ class DateAndTime extends React.Component {
     const { id } = event.target;
     this.setState({ slot: id });
   }
+
+  
 
   handleSubmit(event) {
     api
