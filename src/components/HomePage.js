@@ -1,8 +1,27 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import api from "../api";
 
-function HomePage(props) {
-  const { currentUser } = props;
+class HomePage extends React.Component {
+
+  constructor(props)  {
+    super(props);
+    this.state = { 
+      date:"",
+      energyShot:"",
+      plaid:"",
+      sound:"",
+     };
+  }
+
+  componentDidMount () {
+    console.log(this.props);
+    // console.log("params",params.bookingId)
+  }
+
+  render () {
+
+  const { currentUser } = this.props;
 
   return (
     <section>
@@ -136,6 +155,7 @@ function HomePage(props) {
       </div>
     </section>
   );
+}
 }
 
 export default HomePage;

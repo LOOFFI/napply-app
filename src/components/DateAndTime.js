@@ -50,7 +50,7 @@ class DateAndTime extends React.Component {
         this.setState({ isSubmitSuccess: true });
       })
       .catch(err => {
-        console.log("ERRORRRRRRRRRRRRR", err);
+        console.log("ERROR", err);
       });
   }
 
