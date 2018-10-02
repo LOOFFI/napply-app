@@ -89,11 +89,13 @@ img.navbar-brand {
 /* welcome section */
 .welcome-hp {
   padding: 40px;
+  text-align: center;
 }
 
 .welcome-hp h2 {
   font-size: 22px;
   letter-spacing: 6px;
+  margin-bottom: 20px;
 }
 
 .welcome-hp h3 {
@@ -105,11 +107,15 @@ img.navbar-brand {
   color: #131c25;
 }
 
+.welcome-hp a:hover {
+  color: white;
+}
+
 .welcome-hp button {
   color: #131c25;
   border-color: #131c25;
-  width: 150px;
-  border-radius: 25px;
+  border-radius: 40px;
+  margin-bottom: 20px;
 }
 
 .welcome-hp button:hover {
@@ -281,6 +287,7 @@ div.card.concept-card {
 }
 
 /* >>>>>>>>>> OPTIONS <<<<<<<<<<< */
+
 .options {
   display: flex;
   justify-content: space-around;
@@ -300,9 +307,41 @@ div.card.concept-card {
 }
 
 .option-input {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
-.option-input input {
+.plaid-input input {
   margin-right: 8px;
+}
+
+.sound-input input {
+  margin-right: 8px;
+}
+
+.juices-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.juices-input label {
+  margin-bottom: 0;
+}
+
+.juices legend {
+  margin-bottom: 20px;
+}
+
+/* >>>>>>>>>> PAYMENT <<<<<<<<<<< */
+
+.payment-sec {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.payment-img {
+  width: 60%;
+  margin-bottom: 20px;
 }
