@@ -279,3 +279,30 @@ div.card.concept-card {
 .date-time {
   text-align: center;
 }
+
+/* >>>>>>>>>> OPTIONS <<<<<<<<<<< */
+.options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sounds,
+.blankets,
+.juices {
+  width: 400px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.option-input {
+  margin-bottom: 12px;
+}
+
+.option-input input {
+  margin-right: 8px;
+}
