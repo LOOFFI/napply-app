@@ -45,7 +45,7 @@ class HomePage extends React.Component {
 
               <NavLink to="/signup">
                 <button className="btn btn-outline-primary">
-                  Sign up and book your first nap!
+                  Sign Up and Book Your First Nap!
                 </button>
               </NavLink>
             </div>

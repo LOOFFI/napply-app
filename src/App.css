@@ -2,6 +2,7 @@ body {
   left: 0;
   top: 0;
   font-family: "Montserrat", sans-serif;
+  background-color: white;
 }
 
 /* >>>>>>>> HEADER <<<<<<< */
@@ -11,13 +12,8 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  background-color: #99a7c4;
-  color: white;
+  background-color: white;
   margin-bottom: 30px;
-}
-
-a.active {
-  width: 80%;
 }
 
 .header h2 {
@@ -27,22 +23,26 @@ a.active {
 
 .header a {
   text-decoration: none;
-  color: white;
+  color: #3d3d3c;
   padding: 15px;
 }
 
+a.active {
+  color: #99a7c4;
+}
+
 .header .btn-outline-primary {
-  color: white;
+  color: #3d3d3c;
   background-color: transparent;
   background-image: none;
-  border-color: white;
+  border-color: #3d3d3c;
   margin: 0px 30px;
   border-radius: 25px;
 }
 
 .header .btn-outline-primary:hover {
   background-color: white;
-  border-color: white;
+  border-color: #99a7c4;
   color: #99a7c4;
 }
 
@@ -91,6 +91,7 @@ img.navbar-brand {
 .welcome-hp {
   padding: 40px;
   text-align: center;
+  background-color: white;
 }
 
 .welcome-hp h2 {
@@ -201,6 +202,7 @@ div.card.concept-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .benefits-img img {
