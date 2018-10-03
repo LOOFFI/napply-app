@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import api from "../api";
+let imgUrl = "../../images/energy-pod-back.png";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -11,12 +12,12 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    console.log("current user CDMount", this.props.currentUser)
+    console.log("current user CDMount", this.props.currentUser);
     this.getBookings();
   }
 
   componentDidUpdate(prevProps) {
-    console.log("current user CDU", this.props.currentUser)
+    console.log("current user CDU", this.props.currentUser);
     if (!prevProps.currentUser) {
       this.getBookings();
     }
@@ -35,32 +36,49 @@ class HomePage extends React.Component {
   render() {
     const { currentUser } = this.props;
     const { bookingArray } = this.state;
-    console.log(bookingArray.map(b => ({date: b.date, _id: b._id})));
+    console.log(bookingArray.map(b => ({ date: b.date, _id: b._id })));
     return (
-      <section className="home-back">
+      <section>
         <div className="welcome-hp">
           {!currentUser && (
-            <div className="welcome-hp">
-              <h2>Welcome to Napply</h2>
+            <div
+              className="welcome-hp"
+              style={{
+                backgroundImage: "url(" + imgUrl + ")",
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                height: "900px"
+              }}
+            >
+              <div className="hp-btn">
+                <h2>Welcome to Napply</h2>
 
-              <NavLink to="/signup">
-                <button className="btn btn-outline-primary">
-                  Sign Up and Book Your First Nap!
-                </button>
-              </NavLink>
+                <NavLink to="/signup">
+                  <button className="btn btn-outline-primary">
+                    Sign Up and Book Your First Nap!
+                  </button>
+                </NavLink>
+              </div>
             </div>
           )}
 
           {currentUser && (
             <div>
-              <section className="home-back">
+              <section
+                style={{
+                  backgroundImage: "url(" + imgUrl + ")",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  backgroundRepeat: "no-repeat",
+                  height: "900px"
+                }}
+              >
                 <div className="hp-btn">
                   <h2>
-                    Welcome back, <b>{currentUser.fullName}!</b>
+                    Welcome Back, <br />
+                    <span>{currentUser.fullName}</span>
                   </h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
                   <Link to="/location">
                     <button className="btn btn-outline-primary">
                       Book A Nap
@@ -69,7 +87,7 @@ class HomePage extends React.Component {
                 </div>
               </section>
 
-              <section>
+              <section className="booking">
                 <h3>My Bookings</h3>
 
                 <div className="booking-cards">
@@ -117,10 +135,8 @@ class HomePage extends React.Component {
 
           <div className="concept-cards">
             <div className="card concept-card">
-              <h5>
-                <i className="fas fa-compass" />
-                Pick the most convenient location for you
-              </h5>
+              <img src="../../images/icon1.svg" />
+              <h5>Pick the most convenient location for you</h5>
               <div className="card-body">
                 <p className="card-text">
                   We made sure to spread through the capital. Browse through our
@@ -129,10 +145,8 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className="card concept-card">
-              <h5>
-                <i className="fas fa-bed" />
-                Come on the date, just relax
-              </h5>
+              <img src="../../images/icon2.svg" />
+              <h5>Come on the date, just relax</h5>
               <div className="card-body">
                 <p className="card-text">
                   Once you've booked your nap (3 minutes tops!), the only thing
@@ -141,10 +155,8 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className="card concept-card">
-              <h5>
-                <i className="fas fa-bolt" />
-                You're good to go back to work!
-              </h5>
+              <img src="../../images/icon3.svg" />
+              <h5>You're good to go back to work!</h5>
               <div className="card-body">
                 <p className="card-text">
                   15 minutes later, you are all ready to go and make the most of
