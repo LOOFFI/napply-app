@@ -4,7 +4,7 @@ import axios from "axios";
 // reduces the repetition between requests
 const api = axios.create({
   // the initial part of all our backend routes
-  baseURL: "http://localhost:4000/api",
+  baseURL: `${process.env.REACT_APP_SERVER_URL}/api`,
   // allows axios to send the cookie to the backend
   withCredentials: true
 });

@@ -58,7 +58,6 @@ class Navigation extends React.Component {
                 </button>
               </span>
             )}
-
             {!currentUser && (
               <span>
                 <NavLink to="/login">Log In</NavLink>

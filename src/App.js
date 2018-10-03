@@ -16,6 +16,7 @@ import ValidateBooking from "./components/ValidateBooking";
 import MyAccount from "./components/MyAccount";
 import "./App.css";
 import "./Auth.css";
+import AdminPage from "./components/AdminPage";
 
 class App extends Component {
   constructor(props) {
@@ -101,6 +102,10 @@ class App extends Component {
                 onLogin={userDoc => this.setState({ currentUser: userDoc })}
               />
             )}
+          />
+          <Route
+            path="/admin"
+            render={() => <AdminPage currentUser={currentUser} />}
           />
           <Route
             path="/location"

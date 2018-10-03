@@ -8,9 +8,9 @@ class Options extends React.Component {
     super(props);
 
     this.state = {
-      sound: "Birds & Brook",
-      plaid: "Cashmere",
-      energyShot: "Super Green",
+      sound: "None",
+      plaid: "None",
+      energyShot: "None",
       isSubmitSuccess: false
     };
   }
@@ -55,138 +55,140 @@ class Options extends React.Component {
     }
 
     return (
-      <section>
-        <h2>Choose your options</h2>
+      <section className="loc-section">
+        <h2>For Even More Comfort</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
-          <div>
-            <legend>Sound</legend>
-            <div>
-              <input
-                type="radio"
-                value="Birds & Brook"
-                name="sounds"
-                onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "Birds & Brook"}
-              />
-              <label >Birds & Brook</label>
+          <div className="options">
+            <div className="sounds">
+              <legend>Sound</legend>
+              <div className="option-input sound-input">
+                <input
+                  type="radio"
+                  value="None"
+                  name="sounds"
+                  onChange={event => this.updateSound(event)}
+                  checked={this.state.sound === "None"}
+                />
+                <label htmlFor="None">No Sound</label>
+              </div>
+              <div className="option-input sound-input">
+                <input
+                  type="radio"
+                  value="Birds & Brook"
+                  name="sounds"
+                  onChange={event => this.updateSound(event)}
+                  checked={this.state.sound === "Birds & Brook"}
+                />
+                <label htmlFor="Birds & Brook">Birds & Brook</label>
+              </div>
+              <div className="option-input sound-input">
+                <input
+                  type="radio"
+                  value="See Waves"
+                  name="sounds"
+                  onChange={event => this.updateSound(event)}
+                  checked={this.state.sound === "See Waves"}
+                />
+                <label htmlFor="See Waves">See Waves</label>
+              </div>
+              <div className="option-input sound-input">
+                <input
+                  type="radio"
+                  value="Tibetan Chakra"
+                  name="sounds"
+                  onChange={event => this.updateSound(event)}
+                  checked={this.state.sound === "Tibetan Chakra"}
+                />
+                <label htmlFor="Tibetan Chakra">Tibetan Chakra</label>
+              </div>
             </div>
-            <div>
-              <input
-                type="radio"
-                value="Sea Waves"
-                name="sounds"
-                onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "Sea Waves"}
-              />
-              <label >Sea Waves</label>
+
+            <div className="blankets">
+              <legend>Plaid</legend>
+              <div className="option-input plaid-input">
+                <input
+                  type="radio"
+                  value="None"
+                  name="plaids"
+                  onChange={event => this.updatePlaid(event)}
+                  checked={this.state.plaid === "None"}
+                />
+                <label htmlFor="None">No Plaid</label>
+              </div>
+              <div className="option-input plaid-input">
+                <input
+                  type="radio"
+                  value="Cashmere"
+                  name="plaids"
+                  onChange={event => this.updatePlaid(event)}
+                  checked={this.state.plaid === "Cashmere"}
+                />
+                <label htmlFor="Cashmere">Cashmere</label>
+              </div>
+              <div className="option-input plaid-input">
+                <input
+                  type="radio"
+                  value="Fleece"
+                  name="plaids"
+                  onChange={event => this.updatePlaid(event)}
+                  checked={this.state.plaid === "Fleece"}
+                />
+                <label htmlFor="Fleece">Fleece</label>
+              </div>
             </div>
-            <div>
-              <input
-                type="radio"
-                value="Tibetan Chakra"
-                name="sounds"
-                onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "Tibetan Chakra"}
-              />
-              <label >Tibetan Chakra</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="None"
-                name="sounds"
-                onChange={event => this.updateSound(event)}
-                checked={this.state.sound === "None"}
-              />
-              <label >None</label>
+
+            <div className="juices">
+              <legend>Energy shot</legend>
+              <div className="option-input sound-input">
+                <input
+                  type="radio"
+                  value="none"
+                  name="juices"
+                  onChange={event => this.updateEnergyShot(event)}
+                  checked={this.state.energyShot === "none"}
+                />
+                <label htmlFor="None">No Energy Shot</label>
+              </div>
+              <div className="option-input juices-input">
+                <label htmlFor="Super Green">Super Green</label>
+                <p>5€</p>
+                <small>Apple, Kiwi, Mint</small>
+                <input
+                  type="radio"
+                  value="Super Green"
+                  name="juices"
+                  onChange={event => this.updateEnergyShot(event)}
+                  checked={this.state.energyShot === "Super Green"}
+                />
+              </div>
+              <div className="option-input juices-input">
+                <label htmlFor="Veggie Detox">Veggie Detox</label>
+                <p>5€</p>
+                <small>Cucumber, Aloe Vera, Mint, Spinach</small>
+                <input
+                  type="radio"
+                  value="Veggie Detox"
+                  name="juices"
+                  onChange={event => this.updateEnergyShot(event)}
+                  checked={this.state.energyShot === "Veggie Detox"}
+                />
+              </div>
+              <div className="option-input juices-input">
+                <label htmlFor="White Paradise">White Paradise</label>
+                <p>6€</p>
+                <small>Almond Milk, Coconut, Pineapple</small>
+                <input
+                  type="radio"
+                  value="White Paradise"
+                  name="juices"
+                  onChange={event => this.updateEnergyShot(event)}
+                  checked={this.state.energyShot === "White Paradise"}
+                />
+              </div>
             </div>
           </div>
-
-          <div>
-            <legend>Plaid</legend>
-            <div>
-              <input
-                type="radio"
-                value="Cashmere"
-                name="plaids"
-                onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "Cashmere"}
-              />
-              <label >Cashmere</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="Fleece"
-                name="plaids"
-                onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "Fleece"}
-              />
-              <label >Fleece</label>
-            </div>
-
-            <div>
-              <input
-                type="radio"
-                value="None"
-                name="plaids"
-                onChange={event => this.updatePlaid(event)}
-                checked={this.state.plaid === "None"}
-              />
-              <label >None</label>
-            </div>
-          </div>
-
-          <div>
-            <legend>Energy shot</legend>
-            <div>
-              <input
-                type="radio"
-                value="Super Green"
-                name="juices"
-                onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "Super Green"}
-              />
-              <label >Super Green : Apple / Kiwi / Mint</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="Veggie Detox"
-                name="juices"
-                onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "Veggie Detox"}
-              />
-              <label >
-                Veggie Detox : Cucumber / Aloe Vera / Mint / Spinach
-              </label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="White Paradise"
-                name="juices"
-                onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "White Paradise"}
-              />
-              <label >
-                White Paradise : Almond Milk / Coconut / Pineapple
-              </label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                value="None"
-                name="juices"
-                onChange={event => this.updateEnergyShot(event)}
-                checked={this.state.energyShot === "None"}
-              />
-              <label >None</label>
-            </div>
-          </div>
-
-          <button>Next</button>
+          <button className="btn btn-outline-primary btn-sign">Next</button>
         </form>
       </section>
     );
