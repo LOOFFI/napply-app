@@ -5,6 +5,7 @@ import axios from "axios";
 const api = axios.create({
   // the initial part of all our backend routes
   baseURL: `${process.env.REACT_APP_SERVER_URL}/api`,
+  // baseURL: `http://localhost:4000/api`,
   // allows axios to send the cookie to the backend
   withCredentials: true
 });
