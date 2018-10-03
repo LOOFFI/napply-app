@@ -87,6 +87,7 @@ img.navbar-brand {
 /* >>>>>>>>>> HOME PAGE <<<<<<<<<<< */
 
 /* welcome section */
+
 .welcome-hp {
   padding: 40px;
   text-align: center;
@@ -138,6 +139,7 @@ img.navbar-brand {
   width: 18rem;
   border-style: none;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
 }
 
 .list-group-item .fa-check {
@@ -359,6 +361,7 @@ div.card.concept-card {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .prices.card {
   border-style: none;
   width: 300px;
@@ -394,4 +397,12 @@ div.card.concept-card {
 .card-total .card-text {
   font-weight: bold;
   font-size: 28px;
+=======
+/* >>>>>>>>>> Home page bookings <<<<<<<<<<< */
+
+.booking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+>>>>>>> a3d9bbf3e66305b91b0e00841d138596ecafa226
 }
