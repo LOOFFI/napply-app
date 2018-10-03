@@ -361,7 +361,6 @@ div.card.concept-card {
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .prices.card {
   border-style: none;
   width: 300px;
@@ -397,12 +396,12 @@ div.card.concept-card {
 .card-total .card-text {
   font-weight: bold;
   font-size: 28px;
-=======
+}
+
 /* >>>>>>>>>> Home page bookings <<<<<<<<<<< */
 
 .booking-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
->>>>>>> a3d9bbf3e66305b91b0e00841d138596ecafa226
 }
