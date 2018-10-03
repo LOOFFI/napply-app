@@ -456,3 +456,7 @@ small {
 .booking-cards .card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
+/* .table-drag-select td.booking-being-selected {
+  background-color: #99a7c4;
+} */
