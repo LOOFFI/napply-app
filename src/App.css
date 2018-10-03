@@ -381,7 +381,7 @@ div.card.concept-card {
   color: #99a7c4;
 }
 
-.card-text {
+.payment-sec .card-text {
   font-size: 16px;
   letter-spacing: 3px;
   text-align: left;
