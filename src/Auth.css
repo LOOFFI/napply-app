@@ -6,6 +6,9 @@
   letter-spacing: 6px;
   font-size: 16px;
   color: #99a7c4;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 40px;
+  /* color: #3d3d3c; */
 }
 
 .signup-form {

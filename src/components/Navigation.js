@@ -5,27 +5,7 @@ import api from "../api";
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   currentUser: null
-    // };
   }
-
-  // logoutClick() {
-  //   api
-  //     .delete("/logout")
-  //     .then(() => {
-  //       this.updateUser(null);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //       alert("Sorry! Something went wrong. 💩");
-  //     });
-  // }
-
-  // updateUser(userDoc) {
-  //   this.setState({ currentUser: userDoc });
-  // }
 
   render() {
     const { currentUser, logoutClick } = this.props;
@@ -42,7 +22,11 @@ class Navigation extends React.Component {
             </NavLink>
           </div>
           <div className="right-links">
-            {currentUser && <NavLink to="/">Home</NavLink>}
+            {currentUser && (
+              <NavLink exact to="/">
+                Home
+              </NavLink>
+            )}
             {currentUser && (
               <NavLink exact to={`/my-account/${currentUser._id}`}>
                 My account
@@ -54,15 +38,19 @@ class Navigation extends React.Component {
                   onClick={() => logoutClick()}
                   className="btn btn-outline-primary"
                 >
-                  Log Out
+                  Log out
                 </button>
               </span>
             )}
             {!currentUser && (
               <span>
-                <NavLink to="/login">Log In</NavLink>
+                <NavLink exact to="/login">
+                  Log In
+                </NavLink>
                 <button className="btn btn-outline-primary">
-                  <NavLink to="/signup">Sign Up</NavLink>
+                  <NavLink exact to="/signup">
+                    Sign Up
+                  </NavLink>
                 </button>
               </span>
             )}

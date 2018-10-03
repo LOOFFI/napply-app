@@ -23,8 +23,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null,
-      
+      currentUser: null
     };
   }
 
@@ -41,8 +40,6 @@ class App extends Component {
         alert("Sorry! There was a problem. 💩");
       });
   }
-
-  
 
   // updateUser(userDoc) {
   //   this.setState({ currentUser: userDoc });
@@ -86,6 +83,7 @@ class App extends Component {
             render={() => <HomePage currentUser={currentUser} />}
           />
           <Route
+            exact
             path="/signup"
             render={() => (
               <SignUp
@@ -95,6 +93,7 @@ class App extends Component {
             )}
           />
           <Route
+            exact
             path="/login"
             render={() => (
               <Login
@@ -104,10 +103,12 @@ class App extends Component {
             )}
           />
           <Route
+            exact
             path="/admin"
             render={() => <AdminPage currentUser={currentUser} />}
           />
           <Route
+            exact
             path="/location"
             render={() => <Location currentUser={currentUser} />}
           />
@@ -117,8 +118,12 @@ class App extends Component {
             component={DateAndTime}
           />
           <Route exact path="/options/:bookingId" component={Options} />
-          <Route path="/payment/:bookingId" component={Payment} />
-          <Route path="/validate/:bookingId" component={ValidateBooking} />
+          <Route exact path="/payment/:bookingId" component={Payment} />
+          <Route
+            exact
+            path="/validate/:bookingId"
+            component={ValidateBooking}
+          />
           <Route
             exact
             path="/my-account/:userId"
