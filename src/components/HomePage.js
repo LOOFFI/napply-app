@@ -11,6 +11,18 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    console.log("current user CDMount", this.props.currentUser)
+    this.getBookings();
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log("current user CDU", this.props.currentUser)
+    if (!prevProps.currentUser) {
+      this.getBookings();
+    }
+  }
+
+  getBookings() {
     if (this.props.currentUser) {
       console.log("this.props", this.props.currentUser._id);
       api
@@ -18,15 +30,14 @@ class HomePage extends React.Component {
         .then(response => this.setState({ bookingArray: response.data }))
         .catch(err => console.log("error", err));
     }
-    
   }
 
   render() {
     const { currentUser } = this.props;
     const { bookingArray } = this.state;
-
+    console.log(bookingArray.map(b => ({date: b.date, _id: b._id})));
     return (
-      <section classname="home-back">
+      <section className="home-back">
         <div className="welcome-hp">
           {!currentUser && (
             <div className="welcome-hp">
@@ -42,7 +53,7 @@ class HomePage extends React.Component {
 
           {currentUser && (
             <div>
-              <section classname="home-back">
+              <section className="home-back">
                 <div className="hp-btn">
                   <h2>
                     Welcome back, <b>{currentUser.fullName}!</b>
