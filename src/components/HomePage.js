@@ -61,9 +61,9 @@ class HomePage extends React.Component {
               <section>
                 <h3>Your Bookings</h3>
 
-                <div className="card hp-card">
-                  {bookingArray.map(oneBooking => (
-                    <div className="card-body" key={oneBooking._id}>
+                {bookingArray.map(oneBooking => (
+                  <div className="card hp-card" key={oneBooking._id}>
+                    <div className="card-body">
                       <h5 className="card-title">{oneBooking.truck_id}</h5>
                       <h6
                         className="card-subtitle mb-2 text-muted"
@@ -92,8 +92,8 @@ class HomePage extends React.Component {
                   Show Details
                 </a> */}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </section>
             </div>
           )}
