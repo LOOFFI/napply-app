@@ -403,7 +403,7 @@ div.card.concept-card {
 .booking-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .booking-cards .card {
