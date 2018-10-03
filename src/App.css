@@ -312,6 +312,15 @@ div.card.concept-card {
 
 /* >>>>>>>>>> OPTIONS <<<<<<<<<<< */
 
+.option-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.option-btn {
+  text-align: center;
+}
+
 .options {
   display: flex;
   justify-content: space-around;
@@ -328,24 +337,32 @@ div.card.concept-card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-.option-input {
-  margin-bottom: 20px;
+  align-items: flex-start;
 }
 
 .plaid-input input {
-  margin-right: 8px;
+  margin-right: 15px;
 }
 
 .sound-input input {
-  margin-right: 8px;
+  margin-right: 15px;
+}
+
+.shotbox {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.juice-label {
+  flex: auto;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .juices-input {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .juices-input p {
@@ -358,6 +375,25 @@ div.card.concept-card {
 
 .juices legend {
   margin-bottom: 20px;
+}
+
+.option-title {
+  color: #99a7c4;
+  letter-spacing: 6px;
+  text-align: left;
+}
+
+small {
+  padding-left: 35px;
+}
+
+.price {
+  color: #3f506c;
+  font-size: 16px;
+}
+
+.no-price {
+  margin-bottom: 10px;
 }
 
 /* >>>>>>>>>> PAYMENT <<<<<<<<<<< */

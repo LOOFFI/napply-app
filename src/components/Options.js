@@ -55,13 +55,13 @@ class Options extends React.Component {
     }
 
     return (
-      <section className="loc-section">
+      <section className="option-section">
         <h2>For Even More Comfort</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="options">
             <div className="sounds">
-              <legend>Sound</legend>
+              <legend className="option-title">SOUND</legend>
               <div className="option-input sound-input">
                 <input
                   type="radio"
@@ -105,7 +105,7 @@ class Options extends React.Component {
             </div>
 
             <div className="blankets">
-              <legend>Plaid</legend>
+              <legend className="option-title">PLAID</legend>
               <div className="option-input plaid-input">
                 <input
                   type="radio"
@@ -139,8 +139,8 @@ class Options extends React.Component {
             </div>
 
             <div className="juices">
-              <legend>Energy shot</legend>
-              <div className="option-input sound-input">
+              <legend className="option-title">ENERGY SHOT</legend>
+              <div className="option-input sound-input no-price">
                 <input
                   type="radio"
                   value="none"
@@ -150,45 +150,74 @@ class Options extends React.Component {
                 />
                 <label htmlFor="none">No Energy Shot</label>
               </div>
-              <div className="option-input juices-input">
-                <label htmlFor="Super Green">Super Green</label>
-                <small>Apple, Kiwi, Mint</small>
-                <p>5€</p>
-                <input
-                  type="radio"
-                  value="Super Green"
-                  name="juices"
-                  onChange={event => this.updateEnergyShot(event)}
-                  checked={this.state.energyShot === "Super Green"}
-                />
+
+              <div className="shotbox">
+                <div className="juices-input">
+                  <div className="juice-input">
+                    <input
+                      type="radio"
+                      value="Super Green"
+                      name="juices"
+                      onChange={event => this.updateEnergyShot(event)}
+                      checked={this.state.energyShot === "Super Green"}
+                    />
+                  </div>
+                  <div className="juice-label">
+                    <label htmlFor="Super Green">Super Green</label>
+                  </div>
+                  <div className="juice-price">
+                    <p className="price">5€</p>
+                  </div>
+                </div>
+                <small>Apple, Kiwi, Mint, Pineapple</small>
               </div>
-              <div className="option-input juices-input">
-                <label htmlFor="Veggie Detox">Veggie Detox</label>
+
+              <div className="shotbox">
+                <div className="juices-input">
+                  <div className="juice-input">
+                    <input
+                      type="radio"
+                      value="Veggie Detox"
+                      name="juices"
+                      onChange={event => this.updateEnergyShot(event)}
+                      checked={this.state.energyShot === "Veggie Detox"}
+                    />
+                  </div>
+                  <div className="juice-label">
+                    <label htmlFor="Veggie Detox">Veggie Detox</label>
+                  </div>
+                  <div className="juice-price">
+                    <p className="price">5€</p>
+                  </div>
+                </div>
                 <small>Cucumber, Aloe Vera, Mint, Spinach</small>
-                <p>5€</p>
-                <input
-                  type="radio"
-                  value="Veggie Detox"
-                  name="juices"
-                  onChange={event => this.updateEnergyShot(event)}
-                  checked={this.state.energyShot === "Veggie Detox"}
-                />
               </div>
-              <div className="option-input juices-input">
-                <label htmlFor="White Paradise">White Paradise</label>
+
+              <div className="shotbox">
+                <div className="juices-input">
+                  <div className="juice-input">
+                    <input
+                      type="radio"
+                      value="White Paradise"
+                      name="juices"
+                      onChange={event => this.updateEnergyShot(event)}
+                      checked={this.state.energyShot === "White Paradise"}
+                    />
+                  </div>
+                  <div className="juice-label">
+                    <label htmlFor="White Paradise">White Paradise</label>
+                  </div>
+                  <div className="juice-price">
+                    <p className="price">6€</p>
+                  </div>
+                </div>
                 <small>Almond Milk, Coconut, Pineapple</small>
-                <p>6€</p>
-                <input
-                  type="radio"
-                  value="White Paradise"
-                  name="juices"
-                  onChange={event => this.updateEnergyShot(event)}
-                  checked={this.state.energyShot === "White Paradise"}
-                />
               </div>
             </div>
           </div>
-          <button className="btn btn-outline-primary btn-sign">Next</button>
+          <div className="option-btn">
+            <button className="btn btn-outline-primary btn-sign">Next</button>
+          </div>
         </form>
       </section>
     );

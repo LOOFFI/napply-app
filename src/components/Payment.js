@@ -73,6 +73,9 @@ class Payment extends React.Component {
               <h3>YOUR ORDER</h3>
             </div>
             <div className="card-body">
+              <p className="card-text">TRUCK ID</p>
+              <p className="card-text">OPTIONS 1</p>
+              <p className="card-text">OPTIONS 2</p>
               <p className="card-text">NAP: {napPrice}€</p>
               <p className="card-text">{energyShotLine}</p>
             </div>
