@@ -6,23 +6,28 @@ import "../App.css";
 class BookingTable extends React.Component {
   state = {
     cells: [
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false],
-      [false, false, false, false, false, false]
+      [false, false, false],
+      [false, false, false],
+      [false, false, false],
+      [false, false, false],
+      [false, false, false],
+      [false, false, false],
     ]
   };
  
-  render = () =>
+  render () {
+
+    console.log(this.state.cells[2][2])
+
+    return (
+
     <TableDragSelect
       value={this.state.cells}
       onChange={cells => this.setState({ cells })}
+      
     >
       <tr>
-        <td id="12:00" onClick={(event)=> this.props.updateSlot(event)}>12:00 - 12:15</td>
+        <td selected={true} id="12:00" onClick={event => this.props.updateSlot(event)}>12:00 - 12:15</td>
         <td id="12:20" onClick={event => this.props.updateSlot(event)}>12:20 - 12:35</td>
         <td id="12:40" onClick={event => this.props.updateSlot(event)}>12:40 - 12:55</td>
       </tr>
@@ -52,7 +57,9 @@ class BookingTable extends React.Component {
         <td id="17:40" onClick={event => this.props.updateSlot(event)}>17:40 - 17:55</td>
       </tr>
            
-    </TableDragSelect>;
+    </TableDragSelect>
+    )
+    }
 }
 
 export default BookingTable;

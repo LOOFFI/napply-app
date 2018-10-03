@@ -5,67 +5,78 @@ import api from "../api";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      date: "",
-      energyShot: "",
-      plaid: "",
-      sound: ""
-    };
+    this.state = { 
+     bookingArray:[]
+     };
   }
 
-  componentDidMount() {
-    console.log(this.props);
+  componentDidMount () {
+    if (this.props.currentUser) {
+    console.log("this.props",this.props.currentUser._id);
+    api.get(`/booking-date/`)
+    .then(response => 
+      this.setState({bookingArray:response.data})
+    )
+    .catch(err => console.log("error",err))
+    }
     // console.log("params",params.bookingId)
   }
 
-  render() {
-    const { currentUser } = this.props;
+  render () {
 
-    return (
-      <section>
-        <div className="welcome-hp">
-          {currentUser && (
-            <div>
-              <div className="hp-btn">
-                <h2>
-                  Welcome back, <b>{currentUser.fullName}!</b>
-                </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link to="/location">
-                  <button className="btn btn-outline-primary">
-                    Book A Nap
-                  </button>
-                </Link>
-              </div>
+  const { currentUser } = this.props;
+  const {bookingArray} = this.state;
 
-              <h3>Your Bookings</h3>
-              <div className="card hp-card">
-                <div className="card-body">
-                  <h5 className="card-title">40, rue du Colisée</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
-                    15 October 2018
-                  </h6>
-                  <ul className="list-group list-group-flush">
-                    <li className="list-group-item">
-                      <i className="fas fa-check" />
-                      Sound: <b>Birds & Brook</b>
-                    </li>
-                    <li className="list-group-item">
-                      <i className="fas fa-check" />
-                      Plaid: <b>Cashmere</b>
-                    </li>
-                    <li className="list-group-item">
-                      <i className="fas fa-check" />
-                      Energy Shot: <b>Daily</b>
-                    </li>
-                  </ul>
-                  <a href="#" className="card-link">
-                    Show Details
-                  </a>
-                </div>
-              </div>
+  return (
+
+    <section>
+      <div className="welcome-hp">
+        {currentUser && (
+          <div>
+            <div className="hp-btn">
+              <h2>
+                Welcome back, <b>{currentUser.fullName}!</b>
+              </h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <Link to="/location">
+                <button className="btn btn-outline-primary">Book A Nap</button>
+              </Link>
             </div>
-          )}
+
+            <h3>Your Bookings</h3>
+
+            <ul>
+
+            {bookingArray.map(oneBooking =>
+            <div className="card hp-card" key={oneBooking._id}>
+              <div className="card-body">
+                <h5 className="card-title">{oneBooking.truck_id}</h5>
+                <h6 className="card-subtitle mb-2 text-muted" align="center">
+                  {oneBooking.date.slice(8,10)}-{oneBooking.date.slice(5,7)}-{oneBooking.date.slice(0,4)}
+                </h6>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Sound: <b>{oneBooking.sound}</b>
+                  </li>
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Plaid: <b>{oneBooking.plaid}</b>
+                  </li>
+                  <li className="list-group-item">
+                    <i className="fas fa-check" />
+                    Energy Shot: <b>{oneBooking.energyShot}</b>
+                  </li>
+                </ul>
+                {/* <a href="#" className="card-link">
+                  Show Details
+                </a> */}
+              </div>
+            </div>)}
+
+            </ul>
+          </div>
+        )}
 
           {!currentUser && (
             <div className="welcome-hp">

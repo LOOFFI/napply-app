@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import api from "../api";
-import HomePage from "./HomePage";
+
 
 class ValidateBooking extends React.Component {
   
@@ -47,7 +47,9 @@ class ValidateBooking extends React.Component {
     const dateForm = date.slice(0,10);
     const slotTime = date.slice(11,16);
 
+    
     if (isSubmitSuccess) {
+      
       return <Redirect to="/" />
     }
      
