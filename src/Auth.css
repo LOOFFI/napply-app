@@ -2,8 +2,10 @@
 
 .signup-form h2 {
   text-align: center;
-  font-family: "Sacramento", cursive;
   margin-bottom: 40px;
+  letter-spacing: 6px;
+  font-size: 16px;
+  color: #99a7c4;
 }
 
 .signup-form {
@@ -15,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+  margin-top: 30px;
 }
 
 input:focus {

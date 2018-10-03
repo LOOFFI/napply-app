@@ -79,7 +79,7 @@ class Login extends React.Component {
 
     return (
       <section className="signup-form">
-        <h2>Log In</h2>
+        <h2>LOG IN</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="form-group">
