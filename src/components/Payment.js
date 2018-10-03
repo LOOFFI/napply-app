@@ -49,9 +49,9 @@ class Payment extends React.Component {
         totalPrice += energyShotPrice;
       }
       energyShotLine = (
-        <p className="card-text">
+        <span className="card-text">
           {energyShot.toUpperCase()}: {energyShotPrice}€
-        </p>
+        </span>
       );
     }
 
