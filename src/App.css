@@ -1,7 +1,7 @@
 body {
   left: 0;
   top: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* >>>>>>>> HEADER <<<<<<< */
@@ -336,12 +336,62 @@ div.card.concept-card {
 
 .payment-sec {
   text-align: center;
+}
+
+.payment-sec h2 {
+  margin-bottom: 30px;
+}
+
+.payment-section {
+  text-align: center;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.payment-pic {
+  width: 675px;
 }
 
 .payment-img {
-  width: 60%;
+  width: 110%;
   margin-bottom: 20px;
+}
+
+.prices.card {
+  border-style: none;
+  width: 300px;
+}
+
+.card-header {
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  text-align: left;
+  letter-spacing: 5px;
+  font-size: 16px;
+  color: #99a7c4;
+}
+
+.card-text {
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+
+.card-total {
+  letter-spacing: 6px;
+  font-size: 16px;
+}
+
+.order-total {
+  color: #99a7c4;
+  text-align: left;
+}
+
+.card-total .card-text {
+  font-weight: bold;
+  font-size: 28px;
 }
