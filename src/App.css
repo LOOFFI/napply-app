@@ -139,6 +139,7 @@ img.navbar-brand {
   width: 18rem;
   border-style: none;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
 }
 
 .list-group-item .fa-check {
@@ -345,4 +346,12 @@ div.card.concept-card {
 .payment-img {
   width: 60%;
   margin-bottom: 20px;
+}
+
+/* >>>>>>>>>> Home page bookings <<<<<<<<<<< */
+
+.booking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

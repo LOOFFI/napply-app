@@ -61,36 +61,38 @@ class HomePage extends React.Component {
               <section>
                 <h3>Your Bookings</h3>
 
-                <div className="card hp-card">
+                <div className="booking-cards">
                   {bookingArray.map(oneBooking => (
-                    <div className="card-body" key={oneBooking._id}>
-                      <h5 className="card-title">{oneBooking.truck_id}</h5>
-                      <h6
-                        className="card-subtitle mb-2 text-muted"
-                        align="center"
-                      >
-                        {oneBooking.date.slice(8, 10)}-
-                        {oneBooking.date.slice(5, 7)}-
-                        {oneBooking.date.slice(0, 4)} /
-                        {oneBooking.date.slice(11, 16)}
-                      </h6>
-                      <ul className="list-group list-group-flush">
-                        <li className="list-group-item">
-                          <i className="fas fa-check" />
-                          Sound: <b>{oneBooking.sound}</b>
-                        </li>
-                        <li className="list-group-item">
-                          <i className="fas fa-check" />
-                          Plaid: <b>{oneBooking.plaid}</b>
-                        </li>
-                        <li className="list-group-item">
-                          <i className="fas fa-check" />
-                          Energy Shot: <b>{oneBooking.energyShot}</b>
-                        </li>
-                      </ul>
-                      {/* <a href="#" className="card-link">
+                    <div className="card hp-card" key={oneBooking._id}>
+                      <div className="card-body">
+                        <h5 className="card-title">{oneBooking.truck_id}</h5>
+                        <h6
+                          className="card-subtitle mb-2 text-muted"
+                          align="center"
+                        >
+                          {oneBooking.date.slice(8, 10)}-
+                          {oneBooking.date.slice(5, 7)}-
+                          {oneBooking.date.slice(0, 4)} /
+                          {oneBooking.date.slice(11, 16)}
+                        </h6>
+                        <ul className="list-group list-group-flush">
+                          <li className="list-group-item">
+                            <i className="fas fa-check" />
+                            Sound: <b>{oneBooking.sound}</b>
+                          </li>
+                          <li className="list-group-item">
+                            <i className="fas fa-check" />
+                            Plaid: <b>{oneBooking.plaid}</b>
+                          </li>
+                          <li className="list-group-item">
+                            <i className="fas fa-check" />
+                            Energy Shot: <b>{oneBooking.energyShot}</b>
+                          </li>
+                        </ul>
+                        {/* <a href="#" className="card-link">
                   Show Details
                 </a> */}
+                      </div>
                     </div>
                   ))}
                 </div>
