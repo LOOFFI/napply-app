@@ -55,7 +55,8 @@ class HomePage extends React.Component {
                       >
                         {oneBooking.date.slice(8, 10)}-
                         {oneBooking.date.slice(5, 7)}-
-                        {oneBooking.date.slice(0, 4)}
+                        {oneBooking.date.slice(0, 4)} /
+                        {oneBooking.date.slice(11, 16)}
                       </h6>
                       <ul className="list-group list-group-flush">
                         <li className="list-group-item">

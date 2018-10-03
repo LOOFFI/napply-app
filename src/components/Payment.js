@@ -38,25 +38,21 @@ class Payment extends React.Component {
     let energyShotPrice;
     let energyShotLine;
     let napPrice = 8;
-    let totalPrice;
+    let totalPrice = napPrice;
 
     if (energyShot !== "none") {
       if (energyShot === "Super Green" || energyShot === "Veggie Detox") {
         energyShotPrice = 5;
+        totalPrice += energyShotPrice;
       } else {
         energyShotPrice = 6;
+        totalPrice += energyShotPrice;
       }
       energyShotLine = (
         <p>
           {energyShot}: {energyShotPrice}€
         </p>
       );
-    }
-
-    if (energyShot) {
-      <p>
-        totalPrice = {napPrice}+{energyShotPrice}
-      </p>;
     }
 
     return (
