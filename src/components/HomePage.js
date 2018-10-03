@@ -89,6 +89,7 @@ class HomePage extends React.Component {
 
               <section className="booking">
                 <h3>My Bookings</h3>
+                <div className="border-dark" />
 
                 <div className="booking-cards">
                   {bookingArray.map(oneBooking => (
@@ -132,6 +133,7 @@ class HomePage extends React.Component {
 
         <div className="concept">
           <h4>Concept</h4>
+          <div className="border-light" />
 
           <div className="concept-cards">
             <div className="card concept-card">
