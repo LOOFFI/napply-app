@@ -15,17 +15,22 @@ class HomePage extends React.Component {
     console.log("this.props",this.props.currentUser._id);
     api.get(`/booking-date/`)
     .then(response => 
-      this.setState({bookingArray:response.data})
+      {console.log("response.data",response.data);
+      this.setState({bookingArray:response.data})}
     )
     .catch(err => console.log("error",err))
     }
     // console.log("params",params.bookingId)
   }
 
+
+  
+
   render () {
 
   const { currentUser } = this.props;
-  const {bookingArray} = this.state;
+  const { bookingArray } = this.state;
+  console.log(bookingArray)
 
   return (
 
@@ -52,7 +57,7 @@ class HomePage extends React.Component {
               <div className="card-body">
                 <h5 className="card-title">{oneBooking.truck_id}</h5>
                 <h6 className="card-subtitle mb-2 text-muted" align="center">
-                  {oneBooking.date.slice(8,10)}-{oneBooking.date.slice(5,7)}-{oneBooking.date.slice(0,4)}
+                  {oneBooking.date.slice(8,10)}-{oneBooking.date.slice(5,7)}-{oneBooking.date.slice(0,4)} / {oneBooking.date.slice(11,16)}
                 </h6>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item">
