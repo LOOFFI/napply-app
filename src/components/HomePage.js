@@ -26,28 +26,44 @@ class HomePage extends React.Component {
     const { bookingArray } = this.state;
 
     return (
-      <section>
+      <section classname="home-back">
         <div className="welcome-hp">
+          {!currentUser && (
+            <div className="welcome-hp">
+              <h2>Welcome to Napply</h2>
+
+              <NavLink to="/signup">
+                <button className="btn btn-outline-primary">
+                  Sign up and book your first nap!
+                </button>
+              </NavLink>
+            </div>
+          )}
+
           {currentUser && (
             <div>
-              <div className="hp-btn">
-                <h2>
-                  Welcome back, <b>{currentUser.fullName}!</b>
-                </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Link to="/location">
-                  <button className="btn btn-outline-primary">
-                    Book A Nap
-                  </button>
-                </Link>
-              </div>
+              <section classname="home-back">
+                <div className="hp-btn">
+                  <h2>
+                    Welcome back, <b>{currentUser.fullName}!</b>
+                  </h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <Link to="/location">
+                    <button className="btn btn-outline-primary">
+                      Book A Nap
+                    </button>
+                  </Link>
+                </div>
+              </section>
 
-              <h3>Your Bookings</h3>
+              <section>
+                <h3>Your Bookings</h3>
 
-              <ul>
-                {bookingArray.map(oneBooking => (
-                  <div className="card hp-card" key={oneBooking._id}>
-                    <div className="card-body">
+                <div className="card hp-card">
+                  {bookingArray.map(oneBooking => (
+                    <div className="card-body" key={oneBooking._id}>
                       <h5 className="card-title">{oneBooking.truck_id}</h5>
                       <h6
                         className="card-subtitle mb-2 text-muted"
@@ -76,21 +92,9 @@ class HomePage extends React.Component {
                   Show Details
                 </a> */}
                     </div>
-                  </div>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {!currentUser && (
-            <div className="welcome-hp">
-              <h2>Welcome to Napply</h2>
-
-              <NavLink to="/signup">
-                <button className="btn btn-outline-primary">
-                  Sign up and book your first nap!
-                </button>
-              </NavLink>
+                  ))}
+                </div>
+              </section>
             </div>
           )}
         </div>
