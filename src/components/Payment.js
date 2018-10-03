@@ -80,10 +80,10 @@ class Payment extends React.Component {
               <p className="card-text">{energyShotLine}</p>
             </div>
             <div className="card-footer bg-transparent">
-              <p className="card-total">
+              <div className="card-total">
                 <p className="order-total">ORDER TOTAL</p>
                 <p className="card-text">{totalPrice}€</p>
-              </p>
+              </div>
             </div>
           </div>
         </div>
