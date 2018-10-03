@@ -70,7 +70,7 @@ class HomePage extends React.Component {
               </section>
 
               <section>
-                <h3>Your Bookings</h3>
+                <h3>My Bookings</h3>
 
                 <div className="booking-cards">
                   {bookingArray.map(oneBooking => (

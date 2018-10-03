@@ -1,7 +1,7 @@
 body {
   left: 0;
   top: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* >>>>>>>> HEADER <<<<<<< */
@@ -326,6 +326,10 @@ div.card.concept-card {
   align-items: center;
 }
 
+.juices-input p {
+  margin-bottom: 0;
+}
+
 .juices-input label {
   margin-bottom: 0;
 }
@@ -338,14 +342,64 @@ div.card.concept-card {
 
 .payment-sec {
   text-align: center;
+}
+
+.payment-sec h2 {
+  margin-bottom: 30px;
+}
+
+.payment-section {
+  text-align: center;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.payment-pic {
+  width: 675px;
 }
 
 .payment-img {
-  width: 60%;
+  width: 110%;
   margin-bottom: 20px;
+}
+
+.prices.card {
+  border-style: none;
+  width: 300px;
+}
+
+.card-header {
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  text-align: left;
+  letter-spacing: 5px;
+  font-size: 16px;
+  color: #99a7c4;
+}
+
+.payment-sec .card-text {
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+
+.card-total {
+  letter-spacing: 6px;
+  font-size: 16px;
+}
+
+.order-total {
+  color: #99a7c4;
+  text-align: left;
+}
+
+.card-total .card-text {
+  font-weight: bold;
+  font-size: 28px;
 }
 
 /* >>>>>>>>>> Home page bookings <<<<<<<<<<< */
@@ -354,4 +408,13 @@ div.card.concept-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.booking-cards .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.booking-cards .card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
