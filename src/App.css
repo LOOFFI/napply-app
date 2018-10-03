@@ -170,11 +170,7 @@ img.navbar-brand {
   background-color: #fbfbfb;
   padding: 40px;
   text-align: center;
-  height: 700px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
+  height: 650px;
   color: #3d3d3c;
 }
 
@@ -183,8 +179,10 @@ img.navbar-brand {
 }
 
 .concept h4 {
+  margin-top: 40px;
   margin-bottom: 40px;
   font-size: 50px;
+  padding: 0;
 }
 
 .concept h5 {
@@ -203,7 +201,7 @@ div.card.concept-card {
 }
 
 .concept-card {
-  width: 350px;
+  width: 300px;
 }
 
 .concept-card .fas {
@@ -223,35 +221,47 @@ div.card.concept-card {
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-bottom: 50px;
 }
 
 .benefits-img img {
-  width: 500px;
+  width: 600px;
   padding: 80px;
 }
 
+.benefits-info span {
+  color: #99a7c4;
+}
+
 .benefits-info {
-  line-height: 45px;
   color: #3d3d3c;
   padding: 80px;
+  width: 55%;
 }
 
 .benefits-info ul {
   padding-left: 20px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .benefits-info p {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .benefits-info h4 {
-  margin-bottom: 20px;
-  letter-spacing: 6px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 50px;
+  padding: 0;
 }
 
 .benefits-info h5 {
   margin-bottom: 20px;
-  line-height: 30px;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 /* >>>>>>>>>> LOCATIONS <<<<<<<<<<< */

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import api from "../api";
 let imgUrl = "../../images/energy-pod-back.png";
+let puceImg = "../../images/icon-04.svg";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -146,17 +147,24 @@ class HomePage extends React.Component {
             </div>
             <div className="card concept-card">
               <img src="../../images/icon2.svg" />
-              <h5>Come on the date, just relax</h5>
+              <h5>
+                Come on the date, <br />
+                just relax
+              </h5>
               <div className="card-body">
                 <p className="card-text">
-                  Once you've booked your nap (3 minutes tops!), the only thing
-                  you've got to do and come on the date, lay down and relax.
+                  Once you've booked your nap <br />
+                  (3 minutes tops), the only thing you've got to do and come on
+                  the date, lay down and relax.
                 </p>
               </div>
             </div>
             <div className="card concept-card">
               <img src="../../images/icon3.svg" />
-              <h5>You're good to go back to work!</h5>
+              <h5>
+                You're good to go back <br />
+                to work!
+              </h5>
               <div className="card-body">
                 <p className="card-text">
                   15 minutes later, you are all ready to go and make the most of
@@ -172,14 +180,21 @@ class HomePage extends React.Component {
             <img src="../../images/rest-illustration.jpg" />
           </div>
           <div className="benefits-info">
-            <h4>Napply will help you be at your very best</h4>
+            <h4>
+              Napply will help you be at <br />
+              <span>Your very best!</span>
+            </h4>
             <h5>
               Napping at work sounds pretty risky, but it does give you the
               chance to take a little time, get back in the zone and recharge
               your batteries.
             </h5>
             <p>Taking some time to nap and rest will bring you:</p>
-            <ul>
+            <ul
+              style={{
+                listStyleImage: "url(" + puceImg + ")"
+              }}
+            >
               <li>
                 Improvement of your productivity: attention, concentration,
                 energy, performance, mood.
