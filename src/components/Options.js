@@ -10,7 +10,7 @@ class Options extends React.Component {
     this.state = {
       sound: "None",
       plaid: "None",
-      energyShot: "None",
+      energyShot: "none",
       isSubmitSuccess: false
     };
   }
@@ -148,7 +148,7 @@ class Options extends React.Component {
                   onChange={event => this.updateEnergyShot(event)}
                   checked={this.state.energyShot === "none"}
                 />
-                <label htmlFor="None">No Energy Shot</label>
+                <label htmlFor="none">No Energy Shot</label>
               </div>
               <div className="option-input juices-input">
                 <label htmlFor="Super Green">Super Green</label>
