@@ -152,8 +152,8 @@ class Options extends React.Component {
               </div>
               <div className="option-input juices-input">
                 <label htmlFor="Super Green">Super Green</label>
-                <p>5€</p>
                 <small>Apple, Kiwi, Mint</small>
+                <p>5€</p>
                 <input
                   type="radio"
                   value="Super Green"
@@ -164,8 +164,8 @@ class Options extends React.Component {
               </div>
               <div className="option-input juices-input">
                 <label htmlFor="Veggie Detox">Veggie Detox</label>
-                <p>5€</p>
                 <small>Cucumber, Aloe Vera, Mint, Spinach</small>
+                <p>5€</p>
                 <input
                   type="radio"
                   value="Veggie Detox"
@@ -176,8 +176,8 @@ class Options extends React.Component {
               </div>
               <div className="option-input juices-input">
                 <label htmlFor="White Paradise">White Paradise</label>
-                <p>6€</p>
                 <small>Almond Milk, Coconut, Pineapple</small>
+                <p>6€</p>
                 <input
                   type="radio"
                   value="White Paradise"
