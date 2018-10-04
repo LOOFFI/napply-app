@@ -12,7 +12,6 @@ import Location from "./components/Location";
 import DateAndTime from "./components/DateAndTime";
 import Options from "./components/Options";
 import Payment from "./components/Payment";
-import ValidateBooking from "./components/ValidateBooking";
 import MyAccount from "./components/MyAccount";
 import "./App.css";
 import "./Auth.css";
@@ -107,11 +106,6 @@ class App extends Component {
           />
           <Route exact path="/options/:bookingId" component={Options} />
           <Route exact path="/payment/:bookingId" component={Payment} />
-          <Route
-            exact
-            path="/validate/:bookingId"
-            component={ValidateBooking}
-          />
           <Route
             exact
             path="/my-account/:userId"
