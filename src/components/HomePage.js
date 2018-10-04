@@ -53,7 +53,7 @@ class HomePage extends React.Component {
               }}
             >
               <div className="hp-btn">
-                <h2>Welcome to Napply</h2>
+                <h2>Welcome</h2>
 
                 <NavLink to="/signup">
                   <button className="btn btn-outline-primary">

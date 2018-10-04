@@ -27,7 +27,7 @@ class DateAndTime extends React.Component {
         api
           .post("/booking-date", this.state)
           .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             this.setState({bookingArray:response.data})
                         
           })
@@ -40,7 +40,7 @@ class DateAndTime extends React.Component {
   }
 
   updateSlot(event) {
-    console.log("date and time event", event.target.id);
+    // console.log("date and time event", event.target.id);
     const { id } = event.target;
     this.setState({ slot: id });
   }
@@ -51,7 +51,7 @@ class DateAndTime extends React.Component {
     api
       .post(`/booking-date/${this.props.match.params.bookingId}`, this.state)
       .then(response => {
-        console.log(response);
+        // console.log("RESPONSE",response);
         this.setState({ isSubmitSuccess: true });
       })
       .catch(err => {
@@ -65,6 +65,8 @@ class DateAndTime extends React.Component {
     };
 
     const { isSubmitSuccess, bookingArray } = this.state;
+
+    
 
     if (isSubmitSuccess) {
       return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
