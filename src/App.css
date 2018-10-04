@@ -78,7 +78,6 @@ img.navbar-brand {
   margin-bottom: 30px;
   background-color: #99a7c4;
   height: 5px;
-
 }
 
 /* >>>>>>> FOOTER <<<<<<< */
@@ -137,18 +136,36 @@ img.navbar-brand {
   color: white;
 }
 
-.welcome-hp button {
+.welcome-hp .btn-white {
   color: white;
   border-color: white;
   border-radius: 40px;
-  margin: 20px 0;
+  margin-top: 15px;
   padding: 10px 30px;
 }
 
-.welcome-hp button:hover {
+.welcome-hp .btn-white:hover {
   color: #3d3d3c;
   background-color: #99a7c4;
   border-color: #99a7c4;
+}
+
+.btn-dark {
+  color: #3f506c;
+  border-color: #3f506c;
+  border-radius: 40px;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+.booking .booking-cards .card {
+  padding: 15px;
+}
+
+.btn-dark:hover {
+  color: #99a7c4;
+  border-color: #99a7c4;
+  background-color: white;
 }
 
 .hp-btn {

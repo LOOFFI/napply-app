@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 import api from "../api";
 
@@ -165,20 +166,12 @@ class SignUp extends React.Component {
     } = this.state;
 
     if (currentUser) {
-      return (
-        <section>
-          <h2>You are signed up!</h2>
-          <p>
-            Welcome, {currentUser.fullName}. Your user ID is
-            <b>{currentUser._id}</b>.
-          </p>
-        </section>
-      );
+      return <Redirect to="/" />;
     }
 
     return (
       <section className="signup-form">
-        <h2>Sign Up</h2>
+        <h2>SIGN UP</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="form-group">

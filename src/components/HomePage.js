@@ -55,7 +55,7 @@ class HomePage extends React.Component {
                 <h2>Welcome to Napply</h2>
 
                 <NavLink to="/signup">
-                  <button className="btn btn-outline-primary">
+                  <button className="btn btn-outline-primary btn-white">
                     Sign Up and Book Your First Nap!
                   </button>
                 </NavLink>
@@ -80,7 +80,7 @@ class HomePage extends React.Component {
                     <span>{currentUser.fullName}</span>
                   </h2>
                   <Link to="/location">
-                    <button className="btn btn-outline-primary">
+                    <button className="btn btn-outline-primary btn-white">
                       Book A Nap
                     </button>
                   </Link>
@@ -119,9 +119,9 @@ class HomePage extends React.Component {
                             Energy Shot: <b>{oneBooking.energyShot}</b>
                           </li>
                         </ul>
-                        {/* <a href="#" className="card-link">
-                  Show Details
-                </a> */}
+                        <button className="btn btn-outline-primary btn-dark card-link">
+                          Cancel Booking
+                        </button>
                       </div>
                     </div>
                   ))}

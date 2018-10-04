@@ -192,7 +192,7 @@ class MyAccount extends React.Component {
 
     return (
       <section className="signup-form">
-        <h2>Your account</h2>
+        <h2>MY ACCOUNT</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="form-group">
