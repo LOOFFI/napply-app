@@ -41,10 +41,16 @@ a.active {
   padding: 10px 30px;
 }
 
-.btn-outline-primary:active {
-  border-color: red;
+.header button:active {
+  color: #99a7c4;
+  border-color: #99a7c4;
 }
 
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
+.btn-outline-primary.focus,
 .btn-outline-primary:focus {
   box-shadow: none;
 }
