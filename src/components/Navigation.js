@@ -9,8 +9,9 @@ class Navigation extends React.Component {
 
   render() {
     const { currentUser, logoutClick } = this.props;
+
     return (
-      <header>
+      <header id="header">
         <nav className="header">
           <div className="logo-img">
             <NavLink exact to="/">
