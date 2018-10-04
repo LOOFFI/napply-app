@@ -41,6 +41,10 @@ a.active {
   padding: 10px 30px;
 }
 
+.btn-outline-primary:active {
+  border-color: red;
+}
+
 .btn-outline-primary:focus {
   box-shadow: none;
 }
@@ -378,14 +382,14 @@ div.card.concept-card {
 }
 
 .date-time {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
 }
 
 /* >>>>>>>>>> OPTIONS <<<<<<<<<<< */
 
 .option-section h2 {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
   margin-bottom: 30px;
   color: #3d3d3c;
@@ -475,7 +479,7 @@ small {
 /* >>>>>>>>>> PAYMENT <<<<<<<<<<< */
 
 .payment-sec {
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
 }
 
