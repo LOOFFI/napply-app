@@ -32,13 +32,17 @@ a.active {
 }
 
 .header .btn-outline-primary {
-  color: #3d3d3c;
+  color: #99a7c4;
   background-color: transparent;
   background-image: none;
-  border-color: #3d3d3c;
+  border-color: #99a7c4;
   margin: 0px 30px;
   border-radius: 25px;
   padding: 10px 30px;
+}
+
+.btn-outline-primary:focus {
+  box-shadow: none;
 }
 
 .header .btn-outline-primary:hover {
