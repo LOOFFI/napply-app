@@ -12,9 +12,12 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  background-color: white;
   padding: 60px;
 }
+
+/* header.\/signup {
+  background-color: #99a7c4;
+} */
 
 .header h2 {
   padding-left: 50px;
@@ -110,6 +113,10 @@ img.navbar-brand {
   color: #99a7c4;
 }
 
+#negative {
+  color: #99a7c4;
+}
+
 .welcome-hp {
   text-align: center;
   background-color: white;
@@ -144,8 +151,8 @@ img.navbar-brand {
   padding: 10px 30px;
 }
 
-.welcome-hp .btn-white:hover {
-  color: #3d3d3c;
+.welcome-hp button:hover {
+  color: white;
   background-color: #99a7c4;
   border-color: #99a7c4;
 }
@@ -205,10 +212,6 @@ img.navbar-brand {
   padding: 40px;
   text-align: center;
   height: 700px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
   color: #3d3d3c;
 }
 
@@ -217,7 +220,9 @@ img.navbar-brand {
 }
 
 .concept h4 {
+  margin-top: 40px;
   font-size: 50px;
+  padding: 0;
 }
 
 .concept h5 {
@@ -236,7 +241,7 @@ div.card.concept-card {
 }
 
 .concept-card {
-  width: 350px;
+  width: 300px;
 }
 
 .concept-card .fas {
@@ -256,35 +261,48 @@ div.card.concept-card {
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-bottom: 50px;
 }
 
 .benefits-img img {
-  width: 500px;
-  padding: 80px;
+  width: 650px;
+  padding: 60px;
+  margin-top: 100px;
+}
+
+.benefits-info span {
+  color: #99a7c4;
 }
 
 .benefits-info {
-  line-height: 45px;
   color: #3d3d3c;
-  padding: 80px;
+  padding: 60px;
+  width: 50%;
 }
 
 .benefits-info ul {
   padding-left: 20px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .benefits-info p {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .benefits-info h4 {
-  margin-bottom: 20px;
-  letter-spacing: 6px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 50px;
+  padding: 0;
 }
 
 .benefits-info h5 {
   margin-bottom: 20px;
-  line-height: 30px;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 /* >>>>>>>>>> LOCATIONS <<<<<<<<<<< */
@@ -295,6 +313,7 @@ div.card.concept-card {
 
 .loc-section h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .locations {
@@ -331,6 +350,10 @@ div.card.concept-card {
   margin: 50px 200px;
 }
 
+.booking-date h2 {
+  color: #3d3d3c;
+}
+
 .day-picker {
   margin-right: 100px;
 }
@@ -348,6 +371,7 @@ div.card.concept-card {
 .option-section h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .option-btn {
@@ -437,6 +461,7 @@ small {
 
 .payment-sec h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .payment-section {

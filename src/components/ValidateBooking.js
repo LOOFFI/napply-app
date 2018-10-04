@@ -64,7 +64,7 @@ class ValidateBooking extends React.Component {
       <p>EnergyShot :{this.state.energyShot}</p>
       <p>Plaid :{this.state.plaid}</p>
       <p>Sound :{this.state.sound}</p>
-      <button onClick={event => this.handleSubmit(event)}>Back to homepage</button>
+      <button onClick={event =>  this.handleSubmit(event)}>Back to homepage</button>
     </section>
   );
 }

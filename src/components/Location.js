@@ -91,7 +91,7 @@ class Location extends React.Component {
               />
               <div className="card-body">
                 <label>
-                  <h3>Paris - Montmatre</h3>
+                  <h3>Paris - Montmartre</h3>
                   <p>34 Rue Des Cloys</p>
                   <p>75018 Paris</p>
                   <p>
@@ -101,11 +101,11 @@ class Location extends React.Component {
                   <input
                     type="radio"
                     name="truck_id"
-                    value="Paris - Montmatre, 34 Rue Des Cloys - 75018 Paris"
+                    value="Paris - Montmartre, 34 Rue Des Cloys - 75018 Paris"
                     onChange={event => this.updateTruck(event)}
                     checked={
                       this.state.truck_id ===
-                      "Paris - Montmatre, 34 Rue Des Cloys - 75018 Paris"
+                      "Paris - Montmartre, 34 Rue Des Cloys - 75018 Paris"
                     }
                   />
                 </label>

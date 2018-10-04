@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import api from "./api";
 import Footer from "./components/Footer";
@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // check with the backend to see if we are already logged in
     api
       .get("/checklogin")
       .then(response => {
@@ -37,13 +36,9 @@ class App extends Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! There was a problem. 💩");
+        alert("Sorry! There was a problem.");
       });
   }
-
-  // updateUser(userDoc) {
-  //   this.setState({ currentUser: userDoc });
-  // }
 
   logoutClick() {
     api
@@ -53,28 +48,21 @@ class App extends Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Sorry! Something went wrong.");
       });
   }
 
   render() {
     const { currentUser } = this.state;
+    const { location } = this.props;
 
     return (
       <main>
-        {/* <header> */}
         <Navigation
+          className={location.pathname}
           currentUser={currentUser}
           logoutClick={() => this.logoutClick()}
         />
-
-        {/* {currentUser && (
-            <span>
-              <b>{currentUser.fullName}</b>
-              <button onClick={() => this.logoutClick()}>Log Out</button>
-            </span>
-          )}
-        </header> */}
 
         <Switch>
           <Route
@@ -144,4 +132,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
