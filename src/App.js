@@ -54,11 +54,12 @@ class App extends Component {
   render() {
     const { currentUser } = this.state;
     const { location } = this.props;
+    const linkPieces = location.pathname.split("/");
 
     return (
       <main>
         <Navigation
-          className={location.pathname}
+          className={linkPieces[1]}
           currentUser={currentUser}
           logoutClick={() => this.logoutClick()}
         />
