@@ -34,10 +34,22 @@ class HomePage extends React.Component {
     }
   }
 
+  deleteBooking(oneBooking) {
+    api
+      .delete(`/booking/${oneBooking._id}`)
+      .then(response => {
+        this.getBookings();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     const { currentUser } = this.props;
     const { bookingArray } = this.state;
     console.log(bookingArray.map(b => ({ date: b.date, _id: b._id })));
+    console.log("STATE LENGTH", this.state.bookingArray.length);
     return (
       <section>
         <div className="welcome-hp">
@@ -92,6 +104,7 @@ class HomePage extends React.Component {
                 <h3>My Bookings</h3>
                 <div className="border-dark" />
 
+                {this.state.bookingArray.length < 1 && <p>No bookings yet.</p>}
                 <div className="booking-cards">
                   {bookingArray.map(oneBooking => (
                     <div className="card hp-card" key={oneBooking._id}>
@@ -145,7 +158,10 @@ class HomePage extends React.Component {
                             </li>
                           )}
                         </ul>
-                        <button className="btn btn-outline-primary btn-dark card-link">
+                        <button
+                          className="delete btn btn-outline-primary btn-dark card-link"
+                          onClick={() => this.deleteBooking(oneBooking)}
+                        >
                           Cancel Booking
                         </button>
                       </div>

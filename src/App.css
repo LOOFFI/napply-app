@@ -70,7 +70,7 @@ img.navbar-brand {
 .border-dark {
   width: 100px;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   background-color: #131c25;
   height: 5px;
 }
@@ -111,6 +111,11 @@ img.navbar-brand {
   /* margin: 50px; */
   font-size: 50px;
   color: #99a7c4;
+}
+
+.booking p {
+  color: #131c25;
+  font-size: 20px;
 }
 
 #negative {
