@@ -12,8 +12,11 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  background-color: white;
   padding: 60px;
+}
+
+header.\/signup {
+  background-color: #99a7c4;
 }
 
 .header h2 {
@@ -111,7 +114,7 @@ img.navbar-brand {
 }
 
 #negative {
-  color:#99a7c4;
+  color: #99a7c4;
 }
 
 .welcome-hp {

@@ -53,11 +53,11 @@ class HomePage extends React.Component {
               }}
             >
               <div className="hp-btn">
-                <h2>Welcome to Napply</h2>
+                <h2>Welcome</h2>
 
                 <NavLink to="/signup">
                   <button className="btn btn-outline-primary">
-                      Book Your First Nap!
+                    Book Your First Nap!
                   </button>
                 </NavLink>
               </div>
@@ -96,7 +96,12 @@ class HomePage extends React.Component {
                   {bookingArray.map(oneBooking => (
                     <div className="card hp-card" key={oneBooking._id}>
                       <div className="card-body">
-                        <h5 className="card-title">{oneBooking.truck_id.slice(0,oneBooking.truck_id.indexOf(","))}</h5>
+                        <h5 className="card-title">
+                          {oneBooking.truck_id.slice(
+                            0,
+                            oneBooking.truck_id.indexOf(",")
+                          )}
+                        </h5>
                         <h6
                           className="card-subtitle mb-2 text-muted"
                           align="center"
@@ -107,28 +112,38 @@ class HomePage extends React.Component {
                           {oneBooking.date.slice(11, 16)}
                         </h6>
                         <ul className="list-group list-group-flush">
+                          {oneBooking.sound !== "None" ? (
+                            <li className="list-group-item">
+                              <i className="fas fa-check" />
+                              Sound: <b>{oneBooking.sound}</b>
+                            </li>
+                          ) : (
+                            <li className="list-group-item" id="negative">
+                              No Sound
+                            </li>
+                          )}
 
-                          {(oneBooking.sound !== "None") ? <li className="list-group-item">
-                            <i className="fas fa-check" />
-                            Sound: <b>{oneBooking.sound}</b>
-                          </li> : <li className="list-group-item" id="negative">
-                            No Sound
-                          </li>}
+                          {oneBooking.plaid !== "None" ? (
+                            <li className="list-group-item">
+                              <i className="fas fa-check" />
+                              Plaid: <b>{oneBooking.plaid}</b>
+                            </li>
+                          ) : (
+                            <li className="list-group-item" id="negative">
+                              No Plaid
+                            </li>
+                          )}
 
-                          {(oneBooking.plaid !== "None") ? <li className="list-group-item">
-                            <i className="fas fa-check" />
-                            Plaid: <b>{oneBooking.plaid}</b>
-                          </li> : <li className="list-group-item" id="negative">
-                            No Plaid
-                          </li>}
-
-                          {(oneBooking.energyShot !== "none") ? <li className="list-group-item">
-                            <i className="fas fa-check" />
-                            Energy Shot: <b>{oneBooking.energyShot}</b>
-                          </li> : <li className="list-group-item" id="negative">
-                            No Energy Shot
-                          </li>}
-
+                          {oneBooking.energyShot !== "none" ? (
+                            <li className="list-group-item">
+                              <i className="fas fa-check" />
+                              Energy Shot: <b>{oneBooking.energyShot}</b>
+                            </li>
+                          ) : (
+                            <li className="list-group-item" id="negative">
+                              No Energy Shot
+                            </li>
+                          )}
                         </ul>
                         {/* <a href="#" className="card-link">
                   Show Details

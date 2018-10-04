@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import api from "./api";
 import Footer from "./components/Footer";
@@ -54,10 +54,12 @@ class App extends Component {
 
   render() {
     const { currentUser } = this.state;
+    const { location } = this.props;
 
     return (
       <main>
         <Navigation
+          className={location.pathname}
           currentUser={currentUser}
           logoutClick={() => this.logoutClick()}
         />
@@ -130,4 +132,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
