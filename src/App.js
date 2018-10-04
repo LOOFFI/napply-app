@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // check with the backend to see if we are already logged in
     api
       .get("/checklogin")
       .then(response => {
@@ -37,13 +36,9 @@ class App extends Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! There was a problem. 💩");
+        alert("Sorry! There was a problem.");
       });
   }
-
-  // updateUser(userDoc) {
-  //   this.setState({ currentUser: userDoc });
-  // }
 
   logoutClick() {
     api
@@ -53,7 +48,7 @@ class App extends Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Sorry! Something went wrong.");
       });
   }
 
@@ -62,19 +57,10 @@ class App extends Component {
 
     return (
       <main>
-        {/* <header> */}
         <Navigation
           currentUser={currentUser}
           logoutClick={() => this.logoutClick()}
         />
-
-        {/* {currentUser && (
-            <span>
-              <b>{currentUser.fullName}</b>
-              <button onClick={() => this.logoutClick()}>Log Out</button>
-            </span>
-          )}
-        </header> */}
 
         <Switch>
           <Route
