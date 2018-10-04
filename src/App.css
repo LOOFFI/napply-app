@@ -15,10 +15,6 @@ body {
   padding: 60px;
 }
 
-/* header.\/signup {
-  background-color: #99a7c4;
-} */
-
 .header h2 {
   padding-left: 50px;
   font-size: 1.5em;
@@ -32,6 +28,7 @@ body {
 
 a.active {
   color: #99a7c4;
+  border-color: #99a7c4;
 }
 
 .header .btn-outline-primary {
@@ -41,6 +38,7 @@ a.active {
   border-color: #3d3d3c;
   margin: 0px 30px;
   border-radius: 25px;
+  padding: 10px 30px;
 }
 
 .header .btn-outline-primary:hover {
@@ -51,12 +49,13 @@ a.active {
 
 .btn-outline-primary:not(:disabled):not(.disabled):active {
   background-color: white;
-  border-color: white;
+  border-color: #99a7c4;
   color: #99a7c4;
 }
 
 .btn-outline-primary a:hover {
   color: #99a7c4;
+  border-color: #99a7c4;
 }
 
 .header img {
@@ -70,8 +69,8 @@ img.navbar-brand {
 .border-dark {
   width: 100px;
   margin: 0 auto;
-  margin-bottom: 50px;
-  background-color: #131c25;
+  margin-bottom: 30px;
+  background-color: #3d3d3c;
   height: 5px;
 }
 
@@ -88,19 +87,25 @@ img.navbar-brand {
 .footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #3d3d3c;
   color: white;
-  height: 50px;
+  height: 70px;
+  padding: 20px 85px;
 }
 
 .footer h2 {
-  padding-left: 50px;
-  font-size: 1.5em;
+  font-size: 15px;
+  font-weight: 300;
   margin: 0;
+}
+
+.footer img {
+  width: 10%;
 }
 
 /* >>>>>>>>>> HOME PAGE <<<<<<<<<<< */
@@ -266,13 +271,13 @@ div.card.concept-card {
   justify-content: center;
   align-items: center;
   background-color: white;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .benefits-img img {
   width: 650px;
   padding: 60px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .benefits-info span {
@@ -350,12 +355,12 @@ div.card.concept-card {
 
 /* >>>>>>>>>> BOOKING DATE <<<<<<<<<<< */
 
-.booking-date {
+.booking-date2 {
   display: inline-flex;
   margin: 50px 200px;
 }
 
-.booking-date h2 {
+.booking-date2 h2 {
   color: #3d3d3c;
 }
 
@@ -383,7 +388,7 @@ div.card.concept-card {
   text-align: center;
 }
 
-.options {
+.options2 {
   display: flex;
   justify-content: space-around;
 }

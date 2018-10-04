@@ -8,25 +8,25 @@ class Payment extends React.Component {
     this.state = {
       isSubmitSuccess: false,
       energyShot: "",
-      date:"",
-      plaid:"",
-      sound:"",
-      truck_id:"",
+      date: "",
+      plaid: "",
+      sound: "",
+      truck_id: ""
     };
   }
 
   componentDidMount() {
     api
-      .get(`/booking/${this.props.match.params.bookingId}`)
+      .get(`/booking-date/${this.props.match.params.bookingId}`)
       .then(response => {
-        this.setState({ 
+        this.setState({
           energyShot: response.data.energyShot,
           date: response.data.date,
           plaid: response.data.plaid,
           sound: response.data.sound,
-          truck_id: response.data.truck_id,
+          truck_id: response.data.truck_id
         });
-        console.log("BRAVO", response);
+        console.log("BRAVO", response.data.date);
       })
       .catch(err => {
         console.log("pas bravo", err);
@@ -39,12 +39,18 @@ class Payment extends React.Component {
   }
 
   render() {
-    const { isSubmitSuccess, energyShot, date, plaid, sound, truck_id  } = this.state;
-    console.log("ddddddddddd",plaid)
-
+    const {
+      isSubmitSuccess,
+      energyShot,
+      date,
+      plaid,
+      sound,
+      truck_id
+    } = this.state;
+    
 
     if (isSubmitSuccess) {
-      return <Redirect to={`/validate/${this.props.match.params.bookingId}`} />;
+      return <Redirect to="/" />;
     }
 
     let energyShotPrice;
@@ -85,11 +91,15 @@ class Payment extends React.Component {
               <h3>YOUR ORDER</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">{truck_id.slice(0,truck_id.indexOf(","))}</p>
-              <p className="card-text">LE {date.slice(8, 10)}-{date.slice(5, 7)}-{date.slice(0, 4)}</p>
+              <p className="card-text">
+                {truck_id.slice(0, truck_id.indexOf(","))}
+              </p>
+              <p className="card-text">
+                LE {date.slice(8, 10)}-{date.slice(5, 7)}-{date.slice(0, 4)}
+              </p>
               <p className="card-text">A {date.slice(11, 16)} H</p>
-              { (plaid !== "None") && <p className="card-text">PLAID : {plaid}</p>}
-              { (sound !== "None") && <p className="card-text">SOUND : {sound}</p>}
+              {plaid !== "None" && <p className="card-text">PLAID : {plaid}</p>}
+              {sound !== "None" && <p className="card-text">SOUND : {sound}</p>}
               <p className="card-text">NAP: {napPrice}€</p>
               <p className="card-text">{energyShotLine}</p>
             </div>

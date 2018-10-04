@@ -59,7 +59,7 @@ class Options extends React.Component {
         <h2>For Even More Comfort</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
-          <div className="options">
+          <div className="options2">
             <div className="sounds">
               <legend className="option-title">SOUND</legend>
               <div className="option-input sound-input">
