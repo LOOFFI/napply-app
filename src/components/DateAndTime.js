@@ -28,8 +28,7 @@ class DateAndTime extends React.Component {
           .post("/booking-date", this.state)
           .then(response => {
             // console.log(response.data);
-            this.setState({bookingArray:response.data})
-                        
+            this.setState({ bookingArray: response.data });
           })
           .catch(err => {
             console.log(err);
@@ -44,8 +43,6 @@ class DateAndTime extends React.Component {
     const { id } = event.target;
     this.setState({ slot: id });
   }
-
-  
 
   handleSubmit(event) {
     api
@@ -66,8 +63,6 @@ class DateAndTime extends React.Component {
 
     const { isSubmitSuccess, bookingArray } = this.state;
 
-    
-
     if (isSubmitSuccess) {
       return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
     }
@@ -75,7 +70,7 @@ class DateAndTime extends React.Component {
     return (
       <section className="date-time">
         <h2 align="center">Pick A Date & Time Slot</h2>
-        <div className="booking-date">
+        <div className="booking-date2">
           <div className="day-picker">
             <DayPicker
               disabledDays={past}
@@ -86,7 +81,10 @@ class DateAndTime extends React.Component {
               onDayClick={(day, info) => this.handleDayClick(day, info)}
             />
           </div>
-          <BookingTable bookingArray={bookingArray} updateSlot={event => this.updateSlot(event)} />
+          <BookingTable
+            bookingArray={bookingArray}
+            updateSlot={event => this.updateSlot(event)}
+          />
         </div>
         <button
           className="btn btn-outline-primary btn-sign"
