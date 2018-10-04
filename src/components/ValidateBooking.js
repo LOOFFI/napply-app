@@ -18,7 +18,7 @@ class ValidateBooking extends React.Component {
 
   componentDidMount() {
     const {params} = this.props.match;
-    console.log("params",params.bookingId)
+    // console.log("params",params.bookingId)
 
     api.get(`/booking-date/${params.bookingId }`)
     .then(response => {

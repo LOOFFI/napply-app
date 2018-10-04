@@ -40,7 +40,7 @@ class Payment extends React.Component {
 
   render() {
     const { isSubmitSuccess, energyShot, date, plaid, sound, truck_id  } = this.state;
-    console.log("ddddddddddd",plaid)
+    
 
 
     if (isSubmitSuccess) {
