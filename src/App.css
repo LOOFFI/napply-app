@@ -12,9 +12,12 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  background-color: white;
   padding: 60px;
 }
+
+/* header.\/signup {
+  background-color: #99a7c4;
+} */
 
 .header h2 {
   padding-left: 50px;
@@ -111,7 +114,7 @@ img.navbar-brand {
 }
 
 #negative {
-  color:#99a7c4;
+  color: #99a7c4;
 }
 
 .welcome-hp {
@@ -140,18 +143,36 @@ img.navbar-brand {
   color: white;
 }
 
-.welcome-hp button {
+.welcome-hp .btn-white {
   color: white;
   border-color: white;
   border-radius: 40px;
-  margin: 20px 0;
+  margin-top: 15px;
   padding: 10px 30px;
 }
 
 .welcome-hp button:hover {
-  color: #3d3d3c;
+  color: white;
   background-color: #99a7c4;
   border-color: #99a7c4;
+}
+
+.btn-dark {
+  color: #3f506c;
+  border-color: #3f506c;
+  border-radius: 40px;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+.booking .booking-cards .card {
+  padding: 15px;
+}
+
+.btn-dark:hover {
+  color: #99a7c4;
+  border-color: #99a7c4;
+  background-color: white;
 }
 
 .hp-btn {
@@ -190,7 +211,7 @@ img.navbar-brand {
   background-color: #fbfbfb;
   padding: 40px;
   text-align: center;
-  height: 650px;
+  height: 700px;
   color: #3d3d3c;
 }
 
@@ -200,7 +221,6 @@ img.navbar-brand {
 
 .concept h4 {
   margin-top: 40px;
-  margin-bottom: 40px;
   font-size: 50px;
   padding: 0;
 }
@@ -245,8 +265,9 @@ div.card.concept-card {
 }
 
 .benefits-img img {
-  width: 600px;
-  padding: 80px;
+  width: 650px;
+  padding: 60px;
+  margin-top: 100px;
 }
 
 .benefits-info span {
@@ -255,8 +276,8 @@ div.card.concept-card {
 
 .benefits-info {
   color: #3d3d3c;
-  padding: 80px;
-  width: 55%;
+  padding: 60px;
+  width: 50%;
 }
 
 .benefits-info ul {
@@ -292,6 +313,7 @@ div.card.concept-card {
 
 .loc-section h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .locations {
@@ -328,6 +350,10 @@ div.card.concept-card {
   margin: 50px 200px;
 }
 
+.booking-date h2 {
+  color: #3d3d3c;
+}
+
 .day-picker {
   margin-right: 100px;
 }
@@ -345,6 +371,7 @@ div.card.concept-card {
 .option-section h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .option-btn {
@@ -434,6 +461,7 @@ small {
 
 .payment-sec h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .payment-section {
