@@ -152,7 +152,7 @@ img.navbar-brand {
 }
 
 .welcome-hp button:hover {
-  color: #3d3d3c;
+  color: white;
   background-color: #99a7c4;
   border-color: #99a7c4;
 }
@@ -295,6 +295,7 @@ div.card.concept-card {
 
 .loc-section h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .locations {
@@ -331,6 +332,10 @@ div.card.concept-card {
   margin: 50px 200px;
 }
 
+.booking-date h2 {
+  color: #3d3d3c;
+}
+
 .day-picker {
   margin-right: 100px;
 }
@@ -348,6 +353,7 @@ div.card.concept-card {
 .option-section h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .option-btn {
@@ -437,6 +443,7 @@ small {
 
 .payment-sec h2 {
   margin-bottom: 30px;
+  color: #3d3d3c;
 }
 
 .payment-section {
