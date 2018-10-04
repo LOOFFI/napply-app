@@ -17,7 +17,7 @@ class Payment extends React.Component {
 
   componentDidMount() {
     api
-      .get(`/booking/${this.props.match.params.bookingId}`)
+      .get(`/booking-date/${this.props.match.params.bookingId}`)
       .then(response => {
         this.setState({ 
           energyShot: response.data.energyShot,
@@ -26,7 +26,7 @@ class Payment extends React.Component {
           sound: response.data.sound,
           truck_id: response.data.truck_id,
         });
-        console.log("BRAVO", response);
+        console.log("BRAVO", response.data.date);
       })
       .catch(err => {
         console.log("pas bravo", err);
