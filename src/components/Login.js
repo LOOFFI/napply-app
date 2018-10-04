@@ -74,8 +74,14 @@ class Login extends React.Component {
     const { email, originalPassword } = this.state;
 
     if (currentUser) {
-      return <Redirect to="/" />;
+      if (currentUser.role==="admin") {
+        return <Redirect to="/admin"/>
+      }
+
+      else return <Redirect to="/" />;
     }
+
+    
 
     return (
       <section className="signup-form">
