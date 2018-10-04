@@ -7,7 +7,11 @@ class Payment extends React.Component {
     super(props);
     this.state = {
       isSubmitSuccess: false,
-      energyShot: ""
+      energyShot: "",
+      date:"",
+      plaid:"",
+      sound:"",
+      truck_id:"",
     };
   }
 
@@ -15,7 +19,13 @@ class Payment extends React.Component {
     api
       .get(`/booking/${this.props.match.params.bookingId}`)
       .then(response => {
-        this.setState({ energyShot: response.data.energyShot });
+        this.setState({ 
+          energyShot: response.data.energyShot,
+          date: response.data.date,
+          plaid: response.data.plaid,
+          sound: response.data.sound,
+          truck_id: response.data.truck_id,
+        });
         console.log("BRAVO", response);
       })
       .catch(err => {
@@ -29,7 +39,9 @@ class Payment extends React.Component {
   }
 
   render() {
-    const { isSubmitSuccess, energyShot } = this.state;
+    const { isSubmitSuccess, energyShot, date, plaid, sound, truck_id  } = this.state;
+    console.log("ddddddddddd",plaid)
+
 
     if (isSubmitSuccess) {
       return <Redirect to={`/validate/${this.props.match.params.bookingId}`} />;
@@ -73,9 +85,11 @@ class Payment extends React.Component {
               <h3>YOUR ORDER</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">TRUCK ID</p>
-              <p className="card-text">OPTIONS 1</p>
-              <p className="card-text">OPTIONS 2</p>
+              <p className="card-text">{truck_id.slice(0,truck_id.indexOf(","))}</p>
+              <p className="card-text">LE {date.slice(8, 10)}-{date.slice(5, 7)}-{date.slice(0, 4)}</p>
+              <p className="card-text">A {date.slice(11, 16)} H</p>
+              { (plaid !== "None") && <p className="card-text">PLAID : {plaid}</p>}
+              { (sound !== "None") && <p className="card-text">SOUND : {sound}</p>}
               <p className="card-text">NAP: {napPrice}€</p>
               <p className="card-text">{energyShotLine}</p>
             </div>

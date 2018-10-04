@@ -65,7 +65,7 @@ class Login extends React.Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Invalid Email or Password");
       });
   }
 
