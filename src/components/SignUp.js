@@ -150,7 +150,7 @@ class SignUp extends React.Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! There was a problem. 💩");
+        alert("Sorry! There was a problem.");
       });
   }
 
