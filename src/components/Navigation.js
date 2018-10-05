@@ -5,11 +5,15 @@ import api from "../api";
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showLinks: false,
+    }
   }
 
   render() {
     const { currentUser, logoutClick, className } = this.props;
-
+    const { showLinks } = this.state;
+    console.log("CURRENTUSER!!!!!!!!!!!!!!!!!!!!",currentUser)
     return (
       <header className={className}>
         <nav className="header">
@@ -43,6 +47,7 @@ class Navigation extends React.Component {
                 </button>
               </span>
             )}
+            {(showLinks) && <h1>COUCOU</h1>}
             {!currentUser && (
               <span>
                 <NavLink exact to="/login">

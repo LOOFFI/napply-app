@@ -9,21 +9,40 @@ class AdminPage extends React.Component {
     };
   }
 
-  getBookings() {
-    api.get(`/booking-date/`)
+  componentDidMount() {
+   
+    api.get(`/booking/`)
     .then(response => {
-      console.log("RESPONSE DATA",response.data)
       this.setState({ bookingArray: response.data })})
     .catch(err => console.log("error", err));
   }
+
+
   
   
   render () {
-  const { currentUser } = this.props;
-  console.log("CURRENTUSER", currentUser)
-  his.getBookings()
+  const { currentUser } = this.props;  
+  const {bookingArray} = this.state;
+  
+  return (  
 
-  return (  <h2>Admin Page</h2>);
+  <div>
+    <h1 align="center">BOOKINGS</h1>
+    {bookingArray.map(oneBooking => (
+      <ul key={oneBooking._id} >
+        <li>user : {oneBooking.user_id}
+        ......./....... {oneBooking.date.slice(8, 10)}-{oneBooking.date.slice(5, 7)}-{oneBooking.date.slice(0, 4)}
+        ......./.......{oneBooking.date.slice(11, 16)}
+        ......./.......{oneBooking.truck_id.slice(0,oneBooking.truck_id.indexOf(","))}
+        ......./.......{oneBooking.sound}
+        ......./.......{oneBooking.plaid}
+        ......./.......{oneBooking.energyShot}
+        </li>
+      </ul>
+    ))}
+  </div>
+
+  );
 }
 }
 
