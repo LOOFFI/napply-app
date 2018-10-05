@@ -5,10 +5,15 @@ import api from "../api";
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
+    
   }
 
   render() {
     const { currentUser, logoutClick, className } = this.props;
+    
+    // console.log("CURRENTUSER!!!!!!!!!!!!!!!!!!!!",currentUser)
+    
+    
 
     return (
       <header className={className}>
@@ -43,6 +48,7 @@ class Navigation extends React.Component {
                 </button>
               </span>
             )}
+            
             {!currentUser && (
               <span>
                 <NavLink exact to="/login">
