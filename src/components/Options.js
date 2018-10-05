@@ -90,7 +90,7 @@ class Options extends React.Component {
                   onChange={event => this.updateSound(event)}
                   checked={this.state.sound === "Sea Waves"}
                 />
-                <label htmlFor="Sea Waves">See Waves</label>
+                <label htmlFor="Sea Waves">Sea Waves</label>
               </div>
               <div className="option-input sound-input">
                 <input
