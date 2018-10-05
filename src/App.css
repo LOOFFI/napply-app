@@ -32,13 +32,32 @@ a.active {
 }
 
 .header .btn-outline-primary {
-  color: #3d3d3c;
+  color: #131c25;
   background-color: transparent;
   background-image: none;
-  border-color: #3d3d3c;
+  border-color: #131c25;
   margin: 0px 30px;
   border-radius: 25px;
   padding: 10px 30px;
+}
+
+.header button:active {
+  color: #99a7c4;
+  border-color: #99a7c4;
+}
+
+button.btn.btn-outline-primary:active {
+  color: #99a7c4;
+  border-color: #99a7c4;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
+.btn-outline-primary.focus,
+.btn-outline-primary:focus {
+  box-shadow: none;
 }
 
 .header .btn-outline-primary:hover {
@@ -116,6 +135,11 @@ img.navbar-brand {
   /* margin: 50px; */
   font-size: 50px;
   color: #99a7c4;
+}
+
+.booking p {
+  color: #131c25;
+  font-size: 20px;
 }
 
 #negative {
@@ -313,11 +337,12 @@ div.card.concept-card {
 /* >>>>>>>>>> LOCATIONS <<<<<<<<<<< */
 
 .loc-section {
+  margin-top: 10px;
   text-align: center;
 }
 
 .loc-section h2 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   color: #3d3d3c;
 }
 
@@ -368,24 +393,28 @@ div.card.concept-card {
 }
 
 .date-time {
+  margin-top: 30px;
   text-align: center;
 }
 
 /* >>>>>>>>>> OPTIONS <<<<<<<<<<< */
 
 .option-section h2 {
+  margin-top: 30px;
   text-align: center;
   margin-bottom: 30px;
   color: #3d3d3c;
 }
 
 .option-btn {
+  margin-top: 30px;
   text-align: center;
 }
 
 .options2 {
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .sounds,
@@ -461,6 +490,7 @@ small {
 /* >>>>>>>>>> PAYMENT <<<<<<<<<<< */
 
 .payment-sec {
+  margin-top: 30px;
   text-align: center;
 }
 

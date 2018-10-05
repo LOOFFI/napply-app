@@ -21,7 +21,8 @@ class MyAccount extends React.Component {
       passwordActive: true,
       companyActive: true,
       birthdayActive: true,
-      numberActive: true
+      numberActive: true,
+      isSubmitSuccess: false
     };
   }
 
@@ -122,7 +123,7 @@ class MyAccount extends React.Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Sorry! Something went wrong.");
       });
   }
 
@@ -165,11 +166,12 @@ class MyAccount extends React.Component {
       .then(response => {
         console.log("User PUT", response.data);
         const { editAccount } = this.props;
-        editAccount(response.data.userDoc);
+        editAccount(response.data);
+        this.setState({ isSubmitSuccess: true });
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Sorry! Something went wrong.");
       });
   }
 
@@ -180,13 +182,14 @@ class MyAccount extends React.Component {
       originalPassword,
       company,
       birthday,
-      phoneNumber
+      phoneNumber,
+      isSubmitSuccess
     } = this.state;
 
     const myBirthday = birthday.slice(0, 10);
     const { currentUser } = this.props;
 
-    if (!currentUser) {
+    if (!currentUser || isSubmitSuccess) {
       return <Redirect to="/" />;
     }
 

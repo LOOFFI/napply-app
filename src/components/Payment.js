@@ -47,7 +47,6 @@ class Payment extends React.Component {
       sound,
       truck_id
     } = this.state;
-    
 
     if (isSubmitSuccess) {
       return <Redirect to="/" />;

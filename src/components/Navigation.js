@@ -53,11 +53,9 @@ class Navigation extends React.Component {
                 <NavLink exact to="/login">
                   Log In
                 </NavLink>
-                <button className="btn btn-outline-primary">
-                  <NavLink exact to="/signup">
-                    Sign Up
-                  </NavLink>
-                </button>
+                <NavLink exact to="/signup" className="signup-btn">
+                  <button className="btn btn-outline-primary">Sign Up</button>
+                </NavLink>
               </span>
             )}
           </div>

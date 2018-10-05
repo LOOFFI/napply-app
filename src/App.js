@@ -30,7 +30,8 @@ class App extends Component {
     api
       .get("/checklogin")
       .then(response => {
-        console.log("Check LOG IN 🤔", response.data);
+        console.log("LOGGED IN USER 🤔", response.data);
+        console.log("CURRENT USER", this.state.currentUser);
         this.setState({ currentUser: response.data.userDoc });
       })
       .catch(err => {
