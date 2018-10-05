@@ -27,7 +27,7 @@ class Options extends React.Component {
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! Something went wrong. 💩");
+        alert("Sorry! Something went wrong.");
       });
   }
 
@@ -85,12 +85,12 @@ class Options extends React.Component {
               <div className="option-input sound-input">
                 <input
                   type="radio"
-                  value="See Waves"
+                  value="Sea Waves"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={this.state.sound === "See Waves"}
+                  checked={this.state.sound === "Sea Waves"}
                 />
-                <label htmlFor="See Waves">See Waves</label>
+                <label htmlFor="Sea Waves">See Waves</label>
               </div>
               <div className="option-input sound-input">
                 <input

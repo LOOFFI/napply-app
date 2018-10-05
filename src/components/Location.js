@@ -31,7 +31,7 @@ class Location extends React.Component {
         })
         .catch(err => {
           console.log(err);
-          alert("Sorry! Something went wrong. 💩");
+          alert("Sorry! Something went wrong.");
         });
     });
   }

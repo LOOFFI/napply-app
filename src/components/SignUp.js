@@ -144,13 +144,13 @@ class SignUp extends React.Component {
     api
       .post("/signup", this.state)
       .then(response => {
-        console.log("Sign up 👍", response.data);
+        console.log("Sign up", response.data);
         const { onSignUp } = this.props;
         onSignUp(response.data.userDoc);
       })
       .catch(err => {
         console.log(err);
-        alert("Sorry! There was a problem. 💩");
+        alert("Sorry! There was a problem.");
       });
   }
 
