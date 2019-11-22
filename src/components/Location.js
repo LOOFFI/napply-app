@@ -6,7 +6,8 @@ import api from "../api.js";
 class Location extends React.Component {
   constructor(props) {
     super(props);
-
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateTruck = this.updateTruck.bind(this);
     this.state = {
       truck_id: "La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux",
       user_id: "",
@@ -15,39 +16,39 @@ class Location extends React.Component {
     };
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  // handleSubmit(event) {
+  //   event.preventDefault();
 
-    const { _id } = this.props.currentUser;
-    this.setState({ user_id: _id }, () => {
-      console.log(this.state);
-      api
-        .post("/location", this.state)
-        .then(response => {
-          this.setState({
-            isSubmitSuccess: true,
-            bookingId: response.data._id
-          });
-        })
-        .catch(err => {
-          console.log(err);
-          alert("Sorry! Something went wrong.");
-        });
-    });
-  }
+  //   const { _id } = this.props.currentUser;
+  //   this.props.onSubmit({ user_id: _id }, () => {
+  //     api.post("/location", this.state)
+  //       .then(response => {
+  //         this.setState({
+  //           isSubmitSuccess: true,
+  //           bookingId: response.data._id
+  //         });
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //         alert("Sorry! Something went wrong.");
+  //       });
+  //   });
+  // }
 
-  updateTruck(event) {
-    const { value } = event.target;
-    this.setState({ truck_id: value });
+  updateTruck(e) {    
+    this.props.onSubmit(e.target.value);
   }
 
   render() {
-    const { currentUser } = this.props;
-    const { isSubmitSuccess, bookingId } = this.state;
+    
+    const { isSubmitSuccess } = this.state;
+    const truck_id = this.props.bookingId;
+    console.log(this.props)
+    
 
-    if (isSubmitSuccess) {
-      return <Redirect to={`/booking-date/${bookingId}`} />;
-    }
+    // if (isSubmitSuccess) {
+    //   return <Redirect push from={'/location'} to={`/booking-date/${bookingId}`} />;
+    // }
 
     return (
       <section className="loc-section">
@@ -58,7 +59,7 @@ class Location extends React.Component {
               <img
                 className="card-img-top img-loc"
                 src="../../images/la-defense-paris.jpg"
-                alt="Card image cap"
+                alt="Card cap"
               />
               <div className="card-body">
                 <label>
@@ -75,7 +76,7 @@ class Location extends React.Component {
                     value="La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux"
                     onChange={event => this.updateTruck(event)}
                     checked={
-                      this.state.truck_id ===
+                      this.props.truck_id ===
                       "La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux"
                     }
                   />
@@ -87,7 +88,7 @@ class Location extends React.Component {
               <img
                 className="card-img-top img-loc"
                 src="../../images/montmartre.jpeg"
-                alt="Card image cap"
+                alt="Card cap"
               />
               <div className="card-body">
                 <label>
@@ -102,9 +103,9 @@ class Location extends React.Component {
                     type="radio"
                     name="truck_id"
                     value="Paris - Montmartre, 34 Rue Des Cloys - 75018 Paris"
-                    onChange={event => this.updateTruck(event)}
+                    onChange={e => this.updateTruck(e)}
                     checked={
-                      this.state.truck_id ===
+                      this.props.truck_id ===
                       "Paris - Montmartre, 34 Rue Des Cloys - 75018 Paris"
                     }
                   />
@@ -116,7 +117,7 @@ class Location extends React.Component {
               <img
                 className="card-img-top img-loc"
                 src="../../images/paris1.jpeg"
-                alt="Card image cap"
+                alt="Card cap"
               />
               <div className="card-body">
                 <label>
@@ -133,7 +134,7 @@ class Location extends React.Component {
                     value="Paris - Rivoli, Allée de Castiglione - 75001 Paris"
                     onChange={event => this.updateTruck(event)}
                     checked={
-                      this.state.truck_id ===
+                      this.props.truck_id ===
                       "Paris - Rivoli, Allée de Castiglione - 75001 Paris"
                     }
                   />

@@ -14,16 +14,13 @@ class DateAndTime extends React.Component {
       selectedDay: null,
       slot: "",
       isSubmitSuccess: false,
-      bookingArray: null
+      bookingArray: null,
+      back: false
     };
   }
 
   handleDayClick(day) {
-    this.setState(
-      {
-        selectedDay: day
-      },
-      () => {
+    this.setState({selectedDay: day}, () => {
         api
           .post("/booking-date", this.state)
           .then(response => {
@@ -39,7 +36,6 @@ class DateAndTime extends React.Component {
   }
 
   updateSlot(event) {
-    // console.log("date and time event", event.target.id);
     const { id } = event.target;
     this.setState({ slot: id });
   }
@@ -56,12 +52,22 @@ class DateAndTime extends React.Component {
       });
   }
 
+  backSubmit() {
+    this.setState({ back: true })
+  }
+  
+
   render() {
     const past = {
       before: new Date()
     };
 
-    const { isSubmitSuccess, bookingArray } = this.state;
+    const { isSubmitSuccess, bookingArray, back } = this.state;
+
+    
+    if (back) {
+      return <Redirect push from={`/booking-date/${this.props.match.params.bookingId}`} to={'/location'} />
+    }
 
     if (isSubmitSuccess) {
       return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
@@ -87,7 +93,13 @@ class DateAndTime extends React.Component {
           />
         </div>
         <button
-          className="btn btn-outline-primary btn-sign"
+          className="btn btn-outline-primary btn-sign m-1"
+          onClick={() => this.backSubmit()}
+        >
+          Previous
+        </button>
+        <button
+          className="btn btn-outline-primary btn-sign m-1"
           onClick={event => this.handleSubmit(event)}
         >
           Next

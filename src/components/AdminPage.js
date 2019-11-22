@@ -21,7 +21,7 @@ class AdminPage extends React.Component {
   
   
   render () {
-  const { currentUser } = this.props;  
+  // const { currentUser } = this.props; 
   const {bookingArray} = this.state;
   
   return (  

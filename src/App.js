@@ -8,7 +8,7 @@ import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
-import Location from "./components/Location";
+import Booking from "./components/Booking";
 import DateAndTime from "./components/DateAndTime";
 import Options from "./components/Options";
 import Payment from "./components/Payment";
@@ -22,7 +22,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      bookingId: null
     };
   }
 
@@ -30,8 +31,8 @@ class App extends Component {
     api
       .get("/checklogin")
       .then(response => {
-        console.log("LOGGED IN USER 🤔", response.data);
-        console.log("CURRENT USER", this.state.currentUser);
+        // console.log("LOGGED IN USER 🤔", response.data);
+        // console.log("CURRENT USER", this.state.currentUser);
         this.setState({ currentUser: response.data.userDoc });
       })
       .catch(err => {
@@ -67,13 +68,11 @@ class App extends Component {
 
         <Switch>
           <Route
-            exact
-            path="/"
+            exact path="/"
             render={() => <HomePage currentUser={currentUser} />}
           />
           <Route
-            exact
-            path="/signup"
+            exact path="/signup"
             render={() => (
               <SignUp
                 currentUser={currentUser}
@@ -82,8 +81,7 @@ class App extends Component {
             )}
           />
           <Route
-            exact
-            path="/login"
+            exact path="/login"
             render={() => (
               <Login
                 currentUser={currentUser}
@@ -92,25 +90,21 @@ class App extends Component {
             )}
           />
           <Route
-            exact
-            path="/admin"
+            exact path="/admin"
             render={() => <AdminPage currentUser={currentUser} />}
           />
           <Route
-            exact
-            path="/location"
-            render={() => <Location currentUser={currentUser} />}
+            exact path="/booking"
+            render={() => <Booking currentUser={currentUser}/>}
           />
           <Route
-            exact
-            path="/booking-date/:bookingId"
+            exact path="/booking-date/:bookingId"
             component={DateAndTime}
           />
           <Route exact path="/options/:bookingId" component={Options} />
           <Route exact path="/payment/:bookingId" component={Payment} />
           <Route
-            exact
-            path="/my-account/:userId"
+            exact path="/my-account/:userId"
             render={({ match }) => (
               <MyAccount
                 editAccount={userDoc => this.setState({ currentUser: userDoc })}

@@ -1,13 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import api from "../api";
+
 
 class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    
-  }
-
+  
   render() {
     const { currentUser, logoutClick, className } = this.props;
     

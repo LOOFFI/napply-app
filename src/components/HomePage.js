@@ -92,7 +92,7 @@ class HomePage extends React.Component {
                     Welcome Back, <br />
                     <span>{currentUser.fullName}</span>
                   </h2>
-                  <Link to="/location">
+                  <Link to="/booking">
                     <button className="btn btn-outline-primary btn-white">
                       Book A Nap
                     </button>
@@ -179,7 +179,7 @@ class HomePage extends React.Component {
 
           <div className="concept-cards">
             <div className="card concept-card">
-              <img src="../../images/icon1.svg" />
+              <img src="../../images/icon1.svg" alt=''/>
               <h5>Pick the most convenient location for you</h5>
               <div className="card-body">
                 <p className="card-text">
@@ -189,7 +189,7 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className="card concept-card">
-              <img src="../../images/icon2.svg" />
+              <img src="../../images/icon2.svg" alt=''/>
               <h5>
                 Come on the date, <br />
                 just relax
@@ -203,7 +203,7 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className="card concept-card">
-              <img src="../../images/icon3.svg" />
+              <img src="../../images/icon3.svg" alt=''/>
               <h5>
                 You're good to go back <br />
                 to work!
@@ -220,7 +220,7 @@ class HomePage extends React.Component {
 
         <div className="nap-benefits">
           <div className="benefits-img">
-            <img src="../../images/rest-illustration.jpg" />
+            <img src="../../images/rest-illustration.jpg" alt=''/>
           </div>
           <div className="benefits-info">
             <h4>
