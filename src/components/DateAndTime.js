@@ -20,19 +20,7 @@ class DateAndTime extends React.Component {
   }
 
   handleDayClick(day) {
-    this.setState({selectedDay: day}, () => {
-        api
-          .post("/booking-date", this.state)
-          .then(response => {
-            // console.log(response.data);
-            this.setState({ bookingArray: response.data });
-          })
-          .catch(err => {
-            console.log(err);
-            alert("something !!!!!!! wrong");
-          });
-      }
-    );
+    this.props.handleDayClick(day)
   }
 
   updateSlot(event) {
@@ -65,13 +53,13 @@ class DateAndTime extends React.Component {
     const { isSubmitSuccess, bookingArray, back } = this.state;
 
     
-    if (back) {
-      return <Redirect push from={`/booking-date/${this.props.match.params.bookingId}`} to={'/location'} />
-    }
+    // if (back) {
+    //   return <Redirect push from={`/booking-date/${this.props.match.params.bookingId}`} to={'/location'} />
+    // }
 
-    if (isSubmitSuccess) {
-      return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
-    }
+    // if (isSubmitSuccess) {
+    //   return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
+    // }
 
     return (
       <section className="date-time">
@@ -83,7 +71,7 @@ class DateAndTime extends React.Component {
               modifiers={{
                 sunday: day => day.getDay() === 0 || day.getDay() === 6
               }}
-              selectedDays={this.state.selectedDay}
+              selectedDays={this.props.selectedDay}
               onDayClick={(day, info) => this.handleDayClick(day, info)}
             />
           </div>
