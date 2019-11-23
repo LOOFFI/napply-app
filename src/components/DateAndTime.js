@@ -11,9 +11,6 @@ class DateAndTime extends React.Component {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.state = {
-      selectedDay: null,
-      slot: "",
-      isSubmitSuccess: false,
       bookingArray: null,
       back: false
     };
@@ -24,8 +21,7 @@ class DateAndTime extends React.Component {
   }
 
   updateSlot(event) {
-    const { id } = event.target;
-    this.setState({ slot: id });
+      this.props.updateSlot(event.target.id)
   }
 
   handleSubmit(event) {
@@ -51,15 +47,6 @@ class DateAndTime extends React.Component {
     };
 
     const { isSubmitSuccess, bookingArray, back } = this.state;
-
-    
-    // if (back) {
-    //   return <Redirect push from={`/booking-date/${this.props.match.params.bookingId}`} to={'/location'} />
-    // }
-
-    // if (isSubmitSuccess) {
-    //   return <Redirect to={`/options/${this.props.match.params.bookingId}`} />;
-    // }
 
     return (
       <section className="date-time">

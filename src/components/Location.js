@@ -1,41 +1,14 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-
-import api from "../api.js";
 import CardLocation from "./CardLocation.js";
 
 class Location extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTruck = this.updateTruck.bind(this);
-    this.state = {
-      truck_id: "La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux",
-      user_id: "",
-      isSubmitSuccess: false,
-      bookingId: ""
-    };
+    
   }
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-
-  //   const { _id } = this.props.currentUser;
-  //   this.setState({ user_id: _id }, () => {
-  //     api.post("/location", this.state)
-  //       .then(response => {
-  //         this.setState({
-  //           isSubmitSuccess: true,
-  //           bookingId: response.data._id
-  //         });
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //         alert("Sorry! Something went wrong.");
-  //       });
-  //   });
-  // }
-
+ 
   handleSubmit(e) {
     if (this.props.truck_id!==null) {
       this.props.handleSubmit(this.props.currentUser._id)
@@ -47,18 +20,10 @@ class Location extends React.Component {
   }
 
   render() {
-    
-    const { isSubmitSuccess } = this.state;
-    
-    console.log(this.props)
-    
+  
+  
 
-    // if (isSubmitSuccess) {
-    //   return <Redirect push from={'/location'} to={`/booking-date/${bookingId}`} />;
-    // }
-
-    
-    return (
+  return (
       <section className="loc-section">
         <h2>Pick A Location</h2>
         
@@ -99,7 +64,7 @@ class Location extends React.Component {
             Next step
           </button>
 
-          
+
         </form>
       </section>
     );
