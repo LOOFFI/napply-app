@@ -20,7 +20,7 @@ class Location extends React.Component {
   //   event.preventDefault();
 
   //   const { _id } = this.props.currentUser;
-  //   this.props.onSubmit({ user_id: _id }, () => {
+  //   this.setState({ user_id: _id }, () => {
   //     api.post("/location", this.state)
   //       .then(response => {
   //         this.setState({
@@ -35,14 +35,20 @@ class Location extends React.Component {
   //   });
   // }
 
-  updateTruck(e) {    
+  handleSubmit(e) {
+    if (this.props.truck_id!==null) {
+      this.props.handleSubmit(this.props.currentUser._id)
+    }
+  }
+
+  updateTruck(e) {  
     this.props.onSubmit(e.target.value);
   }
 
   render() {
     
     const { isSubmitSuccess } = this.state;
-    const truck_id = this.props.bookingId;
+    
     console.log(this.props)
     
 
@@ -50,10 +56,13 @@ class Location extends React.Component {
     //   return <Redirect push from={'/location'} to={`/booking-date/${bookingId}`} />;
     // }
 
+    
     return (
       <section className="loc-section">
         <h2>Pick A Location</h2>
+        
         <form onSubmit={event => this.handleSubmit(event)}>
+        
           <div className="locations">
             <div className="card card-loc">
               <img
