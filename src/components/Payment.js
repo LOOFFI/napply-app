@@ -16,22 +16,22 @@ class Payment extends React.Component {
   }
 
   componentDidMount() {
-    api
-      .get(`/booking-date/${this.props.match.params.bookingId}`)
-      .then(response => {
-        this.setState({
-          energyShot: response.data.energyShot,
-          date: response.data.date,
-          plaid: response.data.plaid,
-          sound: response.data.sound,
-          truck_id: response.data.truck_id
+    const { bookingId } = this.props.match.params;
+    api .get(`/booking-date/${bookingId.slice(1, bookingId.length )}`)
+        .then(response => {
+          this.setState({
+            energyShot: response.data.energyShot,
+            // date: response.data.date,
+            plaid: response.data.plaid,
+            sound: response.data.sound,
+            truck_id: response.data.truck_id
+          });
+          console.log("BRAVO", response.data.date);
+        })
+        .catch(err => {
+          console.log("pas bravo", err);
+          alert("azertyh");
         });
-        console.log("BRAVO", response.data.date);
-      })
-      .catch(err => {
-        console.log("pas bravo", err);
-        alert("azertyh");
-      });
   }
 
   handleSubmit(event) {

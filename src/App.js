@@ -97,11 +97,6 @@ class App extends Component {
             exact path="/booking"
             render={() => <Booking currentUser={currentUser}/>}
           />
-          <Route
-            exact path="/booking-date/:bookingId"
-            component={DateAndTime}
-          />
-          <Route exact path="/options/:bookingId" component={Options} />
           <Route exact path="/payment/:bookingId" component={Payment} />
           <Route
             exact path="/my-account/:userId"
