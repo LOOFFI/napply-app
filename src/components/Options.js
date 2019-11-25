@@ -8,51 +8,54 @@ class Options extends React.Component {
     super(props);
 
     this.state = {
-      sound: "None",
-      plaid: "None",
-      energyShot: "none",
+      
       isSubmitSuccess: false
     };
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const { params } = this.props.match;
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   const { params } = this.props.match;
 
-    api
-      .put(`/options/${params.bookingId}`, this.state)
-      .then(response => {
-        console.log("Options MAJ", response.data);
-        this.setState({ isSubmitSuccess: true });
-      })
-      .catch(err => {
-        console.log(err);
-        alert("Sorry! Something went wrong.");
-      });
+  //   api
+  //     .put(`/options/${params.bookingId}`, this.state)
+  //     .then(response => {
+  //       console.log("Options MAJ", response.data);
+  //       this.setState({ isSubmitSuccess: true });
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       alert("Sorry! Something went wrong.");
+  //     });
+  // }
+  handleSubmit() {
+    this.props.payment()
+    this.props.next()
   }
 
   updateSound(event) {
     const { value } = event.target;
-    this.setState({ sound: value });
+    this.props.updateSound(value)
   }
 
   updatePlaid(event) {
     const { value } = event.target;
-    this.setState({ plaid: value });
+    this.props.updatePlaid(value)
   }
 
   updateEnergyShot(event) {
     const { value } = event.target;
-    this.setState({ energyShot: value });
+    this.props.updateEnergyShot(value)
   }
 
   render() {
-    const { isSubmitSuccess } = this.state;
+    // const { isSubmitSuccess } = this.state;
 
-    if (isSubmitSuccess) {
-      const { params } = this.props.match;
-      return <Redirect to={`/payment/${params.bookingId}`} />;
-    }
+    // if (isSubmitSuccess) {
+    //   const { params } = this.props.match;
+    //   return <Redirect to={`/payment/${params.bookingId}`} />;
+    // }
+    const { sound, plaid, energyShot } = this.props;
 
     return (
       <section className="option-section">
@@ -68,7 +71,7 @@ class Options extends React.Component {
                   value="None"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={this.state.sound === "None"}
+                  checked={sound === "None"}
                 />
                 <label htmlFor="None">No Sound</label>
               </div>
@@ -78,7 +81,7 @@ class Options extends React.Component {
                   value="Birds & Brook"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={this.state.sound === "Birds & Brook"}
+                  checked={sound === "Birds & Brook"}
                 />
                 <label htmlFor="Birds & Brook">Birds & Brook</label>
               </div>
@@ -88,7 +91,7 @@ class Options extends React.Component {
                   value="See Waves"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={this.state.sound === "See Waves"}
+                  checked={sound === "See Waves"}
                 />
                 <label htmlFor="See Waves">See Waves</label>
               </div>
@@ -98,7 +101,7 @@ class Options extends React.Component {
                   value="Tibetan Chakra"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={this.state.sound === "Tibetan Chakra"}
+                  checked={sound === "Tibetan Chakra"}
                 />
                 <label htmlFor="Tibetan Chakra">Tibetan Chakra</label>
               </div>
@@ -112,7 +115,7 @@ class Options extends React.Component {
                   value="None"
                   name="plaids"
                   onChange={event => this.updatePlaid(event)}
-                  checked={this.state.plaid === "None"}
+                  checked={plaid === "None"}
                 />
                 <label htmlFor="None">No Plaid</label>
               </div>
@@ -122,7 +125,7 @@ class Options extends React.Component {
                   value="Cashmere"
                   name="plaids"
                   onChange={event => this.updatePlaid(event)}
-                  checked={this.state.plaid === "Cashmere"}
+                  checked={plaid === "Cashmere"}
                 />
                 <label htmlFor="Cashmere">Cashmere</label>
               </div>
@@ -132,7 +135,7 @@ class Options extends React.Component {
                   value="Fleece"
                   name="plaids"
                   onChange={event => this.updatePlaid(event)}
-                  checked={this.state.plaid === "Fleece"}
+                  checked={plaid === "Fleece"}
                 />
                 <label htmlFor="Fleece">Fleece</label>
               </div>
@@ -146,7 +149,7 @@ class Options extends React.Component {
                   value="none"
                   name="juices"
                   onChange={event => this.updateEnergyShot(event)}
-                  checked={this.state.energyShot === "none"}
+                  checked={energyShot === "none"}
                 />
                 <label htmlFor="none">No Energy Shot</label>
               </div>
@@ -159,7 +162,7 @@ class Options extends React.Component {
                       value="Super Green"
                       name="juices"
                       onChange={event => this.updateEnergyShot(event)}
-                      checked={this.state.energyShot === "Super Green"}
+                      checked={energyShot === "Super Green"}
                     />
                   </div>
                   <div className="juice-label">
@@ -180,7 +183,7 @@ class Options extends React.Component {
                       value="Veggie Detox"
                       name="juices"
                       onChange={event => this.updateEnergyShot(event)}
-                      checked={this.state.energyShot === "Veggie Detox"}
+                      checked={energyShot === "Veggie Detox"}
                     />
                   </div>
                   <div className="juice-label">
@@ -201,7 +204,7 @@ class Options extends React.Component {
                       value="White Paradise"
                       name="juices"
                       onChange={event => this.updateEnergyShot(event)}
-                      checked={this.state.energyShot === "White Paradise"}
+                      checked={energyShot === "White Paradise"}
                     />
                   </div>
                   <div className="juice-label">

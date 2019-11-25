@@ -3,7 +3,6 @@ import DayPicker from "react-day-picker";
 import { Redirect } from "react-router-dom";
 import "react-day-picker/lib/style.css";
 import BookingTable from "./BookingTable";
-import api from "../api";
 import "../App.css";
 
 class DateAndTime extends React.Component {
@@ -11,7 +10,7 @@ class DateAndTime extends React.Component {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.state = {
-      bookingArray: null,
+      
       back: false
     };
   }
@@ -20,20 +19,45 @@ class DateAndTime extends React.Component {
     this.props.handleDayClick(day)
   }
 
+  // handleDayClick(day) {
+  //   this.setState(
+  //     {
+  //       selectedDay: day
+  //     },
+  //     () => {
+  //       api
+  //         .post("/booking-date", this.state)
+  //         .then(response => {
+  //           // console.log(response.data);
+  //           this.setState({ bookingArray: response.data });
+  //         })
+  //         .catch(err => {
+  //           console.log(err);
+  //           alert("something !!!!!!! wrong");
+  //         });
+  //     }
+  //   );
+  // }
+
   updateSlot(event) {
       this.props.updateSlot(event.target.id)
   }
 
-  handleSubmit(event) {
-    api
-      .post(`/booking-date/${this.props.match.params.bookingId}`, this.state)
-      .then(response => {
-        // console.log("RESPONSE",response);
-        this.setState({ isSubmitSuccess: true });
-      })
-      .catch(err => {
-        console.log("ERROR", err);
-      });
+  //requete pour mettre a jour et valider le creneau de booking
+  // handleSubmit(event) {
+  //   api
+  //     .post(`/booking-date/${this.props.match.params.bookingId}`, this.state)
+  //     .then(response => {
+  //       // console.log("RESPONSE",response);
+  //       this.setState({ isSubmitSuccess: true });
+  //     })
+  //     .catch(err => {
+  //       console.log("ERROR", err);
+  //     });
+  // }
+
+  handleSubmit() {
+    this.props.next()
   }
 
   backSubmit() {
