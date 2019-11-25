@@ -48,8 +48,8 @@ class HomePage extends React.Component {
   render() {
     const { currentUser } = this.props;
     const { bookingArray } = this.state;
-    console.log(bookingArray.map(b => ({ date: b.date, _id: b._id })));
-    console.log("STATE LENGTH", this.state.bookingArray.length);
+    // console.log(bookingArray.map(b => ({ date: b.date, _id: b._id })));
+    // console.log("STATE LENGTH", this.state.bookingArray.length);
     return (
       <section>
         <div className="welcome-hp">

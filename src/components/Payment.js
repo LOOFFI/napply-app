@@ -21,7 +21,7 @@ class Payment extends React.Component {
         .then(response => {
           this.setState({
             energyShot: response.data.energyShot,
-            // date: response.data.date,
+            date: response.data.date,
             plaid: response.data.plaid,
             sound: response.data.sound,
             truck_id: response.data.truck_id
