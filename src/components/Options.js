@@ -29,7 +29,7 @@ class Options extends React.Component {
   //     });
   // }
   handleSubmit() {
-    this.props.payment()
+    this.props.recap()
     this.props.next()
   }
 
@@ -47,6 +47,8 @@ class Options extends React.Component {
     const { value } = event.target;
     this.props.updateEnergyShot(value)
   }
+
+  
 
   render() {
     // const { isSubmitSuccess } = this.state;

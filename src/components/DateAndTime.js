@@ -9,9 +9,8 @@ class DateAndTime extends React.Component {
   constructor(props) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
-    this.state = {
+    this.state = {      
       
-      back: false
     };
   }
 
@@ -60,9 +59,7 @@ class DateAndTime extends React.Component {
     this.props.next()
   }
 
-  backSubmit() {
-    this.setState({ back: true })
-  }
+  
   
 
   render() {
@@ -70,7 +67,7 @@ class DateAndTime extends React.Component {
       before: new Date()
     };
 
-    const { isSubmitSuccess, bookingArray, back } = this.state;
+    const { bookingArray, selectedDay } = this.props;
 
     return (
       <section className="date-time">
@@ -82,7 +79,7 @@ class DateAndTime extends React.Component {
               modifiers={{
                 sunday: day => day.getDay() === 0 || day.getDay() === 6
               }}
-              selectedDays={this.props.selectedDay}
+              selectedDays={selectedDay}
               onDayClick={(day, info) => this.handleDayClick(day, info)}
             />
           </div>
@@ -93,7 +90,7 @@ class DateAndTime extends React.Component {
         </div>
         <button
           className="btn btn-outline-primary btn-sign m-1"
-          onClick={() => this.backSubmit()}
+          
         >
           Previous
         </button>
