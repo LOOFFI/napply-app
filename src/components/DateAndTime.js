@@ -18,49 +18,13 @@ class DateAndTime extends React.Component {
     this.props.handleDayClick(day)
   }
 
-  // handleDayClick(day) {
-  //   this.setState(
-  //     {
-  //       selectedDay: day
-  //     },
-  //     () => {
-  //       api
-  //         .post("/booking-date", this.state)
-  //         .then(response => {
-  //           // console.log(response.data);
-  //           this.setState({ bookingArray: response.data });
-  //         })
-  //         .catch(err => {
-  //           console.log(err);
-  //           alert("something !!!!!!! wrong");
-  //         });
-  //     }
-  //   );
-  // }
-
   updateSlot(event) {
       this.props.updateSlot(event.target.id)
   }
 
-  //requete pour mettre a jour et valider le creneau de booking
-  // handleSubmit(event) {
-  //   api
-  //     .post(`/booking-date/${this.props.match.params.bookingId}`, this.state)
-  //     .then(response => {
-  //       // console.log("RESPONSE",response);
-  //       this.setState({ isSubmitSuccess: true });
-  //     })
-  //     .catch(err => {
-  //       console.log("ERROR", err);
-  //     });
-  // }
-
   handleSubmit() {
     this.props.next()
   }
-
-  
-  
 
   render() {
     const past = {

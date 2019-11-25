@@ -13,21 +13,6 @@ class Options extends React.Component {
     };
   }
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   const { params } = this.props.match;
-
-  //   api
-  //     .put(`/options/${params.bookingId}`, this.state)
-  //     .then(response => {
-  //       console.log("Options MAJ", response.data);
-  //       this.setState({ isSubmitSuccess: true });
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //       alert("Sorry! Something went wrong.");
-  //     });
-  // }
   handleSubmit() {
     this.props.recap()
     this.props.next()
@@ -51,12 +36,7 @@ class Options extends React.Component {
   
 
   render() {
-    // const { isSubmitSuccess } = this.state;
 
-    // if (isSubmitSuccess) {
-    //   const { params } = this.props.match;
-    //   return <Redirect to={`/payment/${params.bookingId}`} />;
-    // }
     const { sound, plaid, energyShot } = this.props;
 
     return (
