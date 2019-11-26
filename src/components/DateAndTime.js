@@ -26,12 +26,16 @@ class DateAndTime extends React.Component {
     this.props.next()
   }
 
+  handleBack() {
+    this.props.backToLocation()
+  }
+
   render() {
     const past = {
       before: new Date()
     };
 
-    const { bookingArray, selectedDay } = this.props;
+    const { bookingArray, selectedDay, slot } = this.props;
 
     return (
       <section className="date-time">
@@ -48,13 +52,14 @@ class DateAndTime extends React.Component {
             />
           </div>
           <BookingTable
+            slot={slot}
             bookingArray={bookingArray}
             updateSlot={event => this.updateSlot(event)}
           />
         </div>
         <button
           className="btn btn-outline-primary btn-sign m-1"
-          
+          onClick={event => this.handleBack(event)}
         >
           Previous
         </button>

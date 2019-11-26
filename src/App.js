@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
-
 import api from "./api";
 import Footer from "./components/Footer";
 import HomePage from "./components/HomePage";
@@ -9,13 +8,11 @@ import Navigation from "./components/Navigation";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Booking from "./components/Booking";
-import DateAndTime from "./components/DateAndTime";
-import Options from "./components/Options";
 import Payment from "./components/Payment";
 import MyAccount from "./components/MyAccount";
+import AdminPage from "./components/AdminPage";
 import "./App.css";
 import "./Auth.css";
-import AdminPage from "./components/AdminPage";
 
 class App extends Component {
   constructor(props) {

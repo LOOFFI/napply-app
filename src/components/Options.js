@@ -33,7 +33,9 @@ class Options extends React.Component {
     this.props.updateEnergyShot(value)
   }
 
-  
+  handleBack() {
+    this.props.backToDateAndTime()
+  }
 
   render() {
 
@@ -201,7 +203,13 @@ class Options extends React.Component {
             </div>
           </div>
           <div className="option-btn">
-            <button className="btn btn-outline-primary btn-sign">Next</button>
+            <button 
+              className="btn btn-outline-primary btn-sign m-1"
+              onClick={ e => this.handleBack(e)}
+            >
+              Previous
+            </button>
+            <button className="btn btn-outline-primary btn-sign m-1">Next</button>
           </div>
         </form>
       </section>

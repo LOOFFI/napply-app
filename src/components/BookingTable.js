@@ -13,7 +13,7 @@ class BookingTable extends React.Component {
       [false, false, false],
       [false, false, false],
     ],
-    userSelection: ""
+    userSelection: this.props.slot
   };
 
   isSelected(time) {
