@@ -30,6 +30,7 @@ class Location extends React.Component {
         <form onSubmit={event => this.handleSubmit(event)}>
         
           <div className="locations">
+            <div className={"wprock-img-zoom-hover"}>
             <CardLocation 
               imgUrl={'../../images/la-defense-paris.jpg'}
               title={'La Défense - Parvis'}
@@ -38,7 +39,9 @@ class Location extends React.Component {
               checked={this.props.truck_id ==="La Défense - Parvis, 76 Rue de la Demi Lune - 92800 Puteaux"}
               updateTruck={(e) => this.updateTruck(e)}
             />
+            </div>
 
+            <div className={"wprock-img-zoom-hover"}>
             <CardLocation
               imgUrl={"../../images/montmartre.jpeg"}            
               title={'Paris - Montmartre'}
@@ -47,7 +50,9 @@ class Location extends React.Component {
               checked={this.props.truck_id ==="Paris - Montmartre, 34 Rue Des Cloys - 75018 Paris"}
               updateTruck={(e) => this.updateTruck(e)}
             />
+            </div>
 
+            <div className={"wprock-img-zoom-hover"}>
             <CardLocation
               imgUrl={'../../images/paris1.jpeg'}
               title={'Paris - Rivoli'}
@@ -56,7 +61,8 @@ class Location extends React.Component {
               checked={this.props.truck_id ==="Paris - Rivoli, Allée de Castiglione - 75001 Paris"}
               updateTruck={(e) => this.updateTruck(e)}
             />
-
+            </div>
+            
           </div>
 
 

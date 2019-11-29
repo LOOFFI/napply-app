@@ -351,8 +351,10 @@ div.card.concept-card {
   justify-content: space-around;
 }
 
+
 .card-loc {
   width: 300px;
+  height: 400px;
   display: inline-block;
   margin-bottom: 50px;
   border-style: none;
@@ -366,6 +368,25 @@ div.card.concept-card {
 
 .img-loc {
   height: 170px;
+}
+
+.wprock-img-zoom-hover .wprock-img-zoom {
+  overflow: hidden;
+  position: relative;
+}
+
+.wprock-img-zoom-hover .wprock-img-zoom .img-loc {
+  max-width: 100%;
+  max-height: 170px;
+  transition: all 0.8s;
+}
+
+.wprock-img-zoom-hover .wprock-img-zoom * {
+  box-sizing: border-box;
+}
+
+.wprock-img-zoom-hover:hover .wprock-img-zoom .img-loc {
+  transform: scale(1.16);
 }
 
 .fa-phone {
