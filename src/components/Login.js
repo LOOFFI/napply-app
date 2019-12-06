@@ -59,7 +59,7 @@ class Login extends React.Component {
     api
       .post("/login", this.state)
       .then(response => {
-        console.log("Log in 👍", response.data);
+        console.log("Log in", response.data);
         const { onLogin } = this.props;
         onLogin(response.data.userDoc);
       })
