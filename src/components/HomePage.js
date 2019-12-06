@@ -8,7 +8,9 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bookingArray: []
+      bookingArray: [],
+      bookingToCancel: null,
+      alert: false
     };
   }
 
@@ -32,9 +34,25 @@ class HomePage extends React.Component {
     }
   }
 
-  deleteBooking(oneBooking) {
+  deleteProcess(oneBooking) {
 
-   api.delete(`/booking/${oneBooking._id}`)
+    this.setState({
+      alert: true,
+      bookingToCancel: oneBooking._id
+    })
+  }
+
+  cancelDeleteProcess() {
+    this.setState({
+      alert: false
+    })
+  }
+
+  deleteBooking(oneBooking) {
+    this.setState({
+      alert: false
+    });
+    api.delete(`/booking/${oneBooking}`)
       .then(response => {
         this.getBookings();
       })
@@ -45,7 +63,7 @@ class HomePage extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-    const { bookingArray } = this.state;
+    const { bookingArray, bookingToCancel } = this.state;
    
     
     return (
@@ -158,10 +176,11 @@ class HomePage extends React.Component {
                         </ul>
                         <button
                           className="delete btn btn-outline-primary btn-dark card-link"
-                          onClick={() => this.deleteBooking(oneBooking)}
+                          onClick={() => this.deleteProcess(oneBooking)}
                         >
                           Cancel Booking
                         </button>
+                        
                       </div>
                     </div>
                   ))}
@@ -170,7 +189,19 @@ class HomePage extends React.Component {
             </div>
           )}
         </div>
-
+        {this.state.alert ? 
+          <div className="alert alert-danger" role="alert">
+            Are you sure you want to delete this booking ?
+            <button
+              className="btn"
+              onClick={() => this.deleteBooking(bookingToCancel)}
+            >OK</button>
+            <button
+              className="btn"
+              onClick={() => this.cancelDeleteProcess()}
+            >NO</button>
+          </div>
+           : ""}
         <div className="concept">
           <h4>Concept</h4>
           <div className="border-light" />

@@ -75,7 +75,7 @@ class Options extends React.Component {
                   value="Sea Waves"
                   name="sounds"
                   onChange={event => this.updateSound(event)}
-                  checked={sound === "See Waves"}
+                  checked={sound === "Sea Waves"}
                 />
                 <label htmlFor="Sea Waves">Sea Waves</label>
               </div>
