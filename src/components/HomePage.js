@@ -190,14 +190,14 @@ class HomePage extends React.Component {
           )}
         </div>
         {this.state.alert ? 
-          <div className="alert alert-danger" role="alert">
+          <div className="alert alert-danger mx-5 px-5" role="alert">
             Are you sure you want to delete this booking ?
             <button
-              className="btn"
+              className="btn m-3 p-3"
               onClick={() => this.deleteBooking(bookingToCancel)}
             >OK</button>
             <button
-              className="btn"
+              className="btn m-3 p-3"
               onClick={() => this.cancelDeleteProcess()}
             >NO</button>
           </div>
