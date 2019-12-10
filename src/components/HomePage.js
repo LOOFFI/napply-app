@@ -193,11 +193,11 @@ class HomePage extends React.Component {
           <div className="alert alert-danger mx-5 px-5" role="alert">
             Are you sure you want to delete this booking ?
             <button
-              className="btn m-3 p-3"
+              className="delete btn btn-outline-primary btn-dark m-3 p-3"
               onClick={() => this.deleteBooking(bookingToCancel)}
             >OK</button>
             <button
-              className="btn m-3 p-3"
+              className="delete btn btn-outline-primary btn-dark m-3 p-3"
               onClick={() => this.cancelDeleteProcess()}
             >NO</button>
           </div>

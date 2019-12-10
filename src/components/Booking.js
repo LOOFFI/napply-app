@@ -41,9 +41,10 @@ class Booking extends React.Component {
   }
 
   backToDateAndTime() {
-    const {next} = this.state;
+    const {next,recap} = this.state;
     this.setState({
-      next: !next
+      next: !next,
+      recap: !recap
     })
   }
 
@@ -157,8 +158,8 @@ class Booking extends React.Component {
 
    
   render() { 
-    // console.log('this.props', this.props.currentUser._id)
-    // console.log(this.state)
+    console.log('this.props', this.props)
+    console.log(this.state)
     const { currentUser } = this.props;
     const { bookingId, truck_id, next, selectedDay, sound, plaid, energyShot, energyShotPrice, slot, bookingArray, recap, isSubmitSuccess } = this.state;
     

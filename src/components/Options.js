@@ -38,7 +38,7 @@ class Options extends React.Component {
   }
 
   render() {
-
+    console.log('this props', this.props);
     const { sound, plaid, energyShot } = this.props;
 
     return (
